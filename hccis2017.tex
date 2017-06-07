@@ -618,6 +618,60 @@ This indicates that there was no learning affect and that experience with the te
 The evidence indicates that hypothesis 2 is incorrect.
 
 
+\section*{Discussion}\label{sec:discussion}
+
+\begin{figure}[bp]
+   \centering
+   \caption{A bar chart showing the relation between the magnitude of participant inaccuracies and the error of the technique's result.}
+   \includegraphics[width=0.9\textwidth]{figures/total_deviation_vs_angle_deviations.png}
+   \label{fig:barReflect}
+\end{figure}
+
+As noted in Section~\ref{sec:results}, there is a subset of results which do not conform to the general trend of the data.
+This subset consists of 8 results.
+These outlying results are circled in Figure~\ref{fig:scatter} outside the grouping of the majority of data.
+The data outside this subset of results implies that there is a proportional relationship between a user's accuracy and the error of the result.
+However, these outlying results represent instances where a participant has been relatively inaccurate in comparison to other executions of the technique but a position with little deviation from the interface's actual position has been calculated.
+This implies that the relationship between a user's inaccuracies and the error of the technique's result is more complex than hypothesis 1 states.
+
+It is possible that one of the arrows used by the technique as an input has a greater influence over the result than the others.
+The bars above the x-axis of the graph shown in Figure~\ref{fig:barReflect} represent deviation of participant drawn arrows from their corresponding optimums for all 52 instances of the technique being performed.
+Under each of these bars, beneath the x-axis, is another bar which represents the error of the corresponding instance of the technique's result.
+The graph highlights the general trend of participant's total inaccuracy increasing with the error of the result.
+If any particular arrow input into the technique has a greater influence than the others then a relationship between the inaccuracies of the arrow and the result would be apparent.
+For example, if arrow 1 had a significantly greater influence than arrows 2 and 3 then a correlation between the size of the participant inaccuracies when drawing this arrow and the magnitude of the error in the technique's result would be apparent.
+However, no relation between the inaccuracy for a single arrow and the error of the technique's result is apparent in these results.
+
+It is possible that a specific combination of arrows may have the greatest influence on the result, rather than a single arrow.
+If this were true it would mean that one of the arrows would have comparatively little influence on the technique's result.
+In circumstances where the participant inaccuracy for this inconsequential arrow is large, but is small for the other two arrows, the total deviation from the arrow optimums would not be proportional to the result's error.
+This would account for the outlying data.
+However, the data from the study does not support this as no relationship between the inaccuracy of two arrows and the error of the technique's result is apparent.
+
+There is a further possibility that different individual arrows, or combination of arrows may have the greater influence in specific regions of the environment.
+This could be due to the interface's proximity to the landmarks.
+If an interface inhabits a region of the display where one of the landmarks used by the technique is significantly closer than the other, it is possible that the arrow pointing towards this landmark may hold a greater or lesser influence than in other regions of the environment.
+Further study is required to discover if this theory is correct.
+If true, knowledge of which arrow or combinations of arrows are the most influential in specific areas of an environment could be used to allow the system to reduce the impact of user inaccuracy.
+
+Because users do not appear to become more accurate with experience, alternative methods of improving the accuracy of the technique will need to be employed.
+Confidence ratings could be used to reduce the potential error of the technique's results.
+Factors which influence a user's accuracy could be used to determine the initial confidence rating for an interface.
+These ratings could then be used to assess whether a result is potentially accurate enough for use.
+If not, the user could be asked to repeat the technique at this interface.
+An average of the results from multiple executions of the technique on a specific interface could be used as the calculated position for further use by a system.
+The deviation between the results could also be used to influence the confidence rating.
+Since hypothesis 1 holds true, there is a proportional relationship between user accuracy and the size of the result's error.
+A small deviation in the multiple results from a single interface would indicate that the user is being more accurate than a user producing a large deviation in their results.
+
+As a user repeats the technique on an interface the confidence rating increases.
+A greater confidence rating implies a higher probability of a more accurate calculated position.
+However, one of the main strengths of this technique is the short amount of time it requires in comparison to the alternative of measuring the position of an interface directly.
+Users were noted to take an average of 26.9 seconds per each performance of the technique in the study.
+Repeating the technique increases the amount of time required to calculate the position on an interface.
+It is important to consider the trade-off between the accuracy gained from repeats of the technique and the additional time required from users.
+Using knowledge of where in an environment users may be less accurate, the number of times the technique is repeated could be kept to a minimum allowing for the best trade-off between time taken and accuracy.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
 %% Backmatter begins here                   %%

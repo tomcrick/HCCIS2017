@@ -270,7 +270,7 @@ When a material transfer is initiated the system can use the direction defined b
 \begin{figure}[h!]
    \centering
    \caption{An example of how content items can be transferred between linked interfaces using flicking.}
-   \includegraphics[width=0.4\textwidth]{figures/flicking.png}
+   \includegraphics[width=0.6\textwidth]{figures/flicking.png}
    \label{fig:flick}
 \end{figure}
 
@@ -508,6 +508,82 @@ The inaccuracies in a user's input into the technique will result in the calcula
 This deviation between the calculated and actual interfaces locations could make this technique too inaccurate for use in some scenarios.
 Therefore, it is important to discover how a user's inaccuracies when performing the technique affect the resulting value.
 
+\section*{User Study}\label{sec:study}
+
+\begin{figure}[ht]
+  \centering
+   \caption{The positions and orientations of the markers and interfaces used in the user study.}
+  \includegraphics[width=0.9\textwidth]{figures/studyLayout.png}
+   \label{fig:room}
+\end{figure}
+
+A study was conducted to determine how a user's accuracy affected the error of the technique's calculated interface positions.
+The study focused on discovering whether the results given by the technique could be accurate enough for use in a specific scenario.
+The technique was implemented into a software framework and deployed on four multi-touch table interfaces.
+
+\subsection*{Implementation of the Technique}\label{sec:implementation}
+
+% New line behaviour
+
+Software for the study was constructed using SynergyNet~\cite{AlAgha2010}, a multi-touch software framework.
+The SynergyNet framework utilises a number of third party libraries to support a wide range of functions such as networking, gesture recognition and multimedia support, in addition to the management of multiple touch inputs.
+The framework is designed so that applications can easily be created using its content system.
+These applications can then take advantage of the framework's features.
+The technique was implemented as part of an application which allowed for it to utilise a touch based input.
+
+The arrows used in the implemented technique were designed to always originate from the centre of the interface.
+The tail of an arrow remained in the centre of the interface while the participant could drag the arrowhead to any location on display.
+The arrow being manipulated would therefore point from the centre of the interface towards the location of a participant's input.
+This allowed participants to determine the direction and length of the arrow.
+The participant could reposition an arrowhead as much as they wanted.
+Once a participant was finished establishing an arrow's direction they would then press a button on the interface to confirm their arrangement.
+
+The technique first asked participants to draw a single arrow.
+This arrow corresponds to arrow 1 in Figure~\ref{fig:orienTrig} which is used to establish the interface's orientation.
+Once the participant confirmed their arrangement of this arrow they would then be asked position two arrows together.
+These are arrows 2 and 3, as shown in figure~\ref{fig:trig}.
+While each of the arrows for this stage of the technique is intended to point towards a landmark, the target for each arrow is not made explicit to the participant.
+This is because the target for each of the arrows is interchangeable between the two landmarks.
+As long as each of the two arrows points at a different landmark it does not matter which landmark an arrow points to.
+The technique was implemented in such a way that made it capable of identifying which landmark an arrow points to.
+The assumption is made that all the interfaces are positioned in the space to the right of the line heading from landmark A to B.
+Therefore, the arrow with the smallest clockwise angle from the environment's y-axis is arrow 2.
+With this known, arrow 3 is known through the process of elimination.
+When a participant was satisfied with the positioning of both these arrows they could then confirm their placement to complete the technique.
+
+\subsection*{Study Design}\label{sec:design}
+
+% Table measurements and layout
+
+The table interfaces used in the study were positioned in the configuration shown in Figure~\ref{fig:room}.
+This configuration was chosen to....
+
+Video recordings of the participants using the technique were made so that information regarding the timings and possible mistakes could be observed.
+The application which the technique was implemented into was designed to record the local angle of any of the arrows drawn by a participant.
+Any of the values used by the technique to calculate an interface's location were also recorded along with the resulting locational information.
+
+Before the study took place direct measurements of the table's positions and orientations were made by the first author.
+Using these values and the technique's calculations the angle of the arrows which would produce perfectly accurate locational information could be derived.
+Comparing these optimal angles with the angles of participant drawn arrows allowed for a participant's inaccuracy to be quantified.
+
+The four table interface used in the study were identical.
+Each table interface had a resolution of 1024 by 768 displayed on a ...mm by ....mm screen.
+
+Two hypotheses were proposed prior to the study beginning:
+
+\begin{itemize}
+\item[\textbf{Hypothesis 1}] \textit{The error of the technique's result is proportional to the deviation of participant drawn arrows from their optimal angles.}
+
+To support or disprove this hypothesis, the optimal angles of an interface were compared with the $\alpha$, $\beta$ and $\theta$ angles of the arrows drawn by the participants for each execution of the technique.
+The deviation of a participant's arrows from their optimal angles could then be compared to the difference between the corresponding interface's technique calculated and actual positions.
+
+\item[\textbf{Hypothesis 2}] \textit{As participant's gain experience with the technique, their accuracy improves.}
+
+This hypothesis was derived from the observation that as participants gain experience with an interaction technique their performance improves~\cite{Constantine1999}.
+If user accuracy is found to influence the technique's result it is important to understand changes in user accuracy caused by practice.
+The order of the tables on which the technique was performed was changed between participants.
+This allowed any influences regarding the positioning of the interfaces to be distinguished from any learning effect the technique may have.
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

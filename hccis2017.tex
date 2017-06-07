@@ -47,15 +47,17 @@
 \documentclass{bmcart}
 
 %%% Load packages
-\usepackage{amsthm,amsmath}
+\usepackage{amsthm,amsmath,amssymb}
 %\RequirePackage{natbib}
 %\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{multirow}
 \usepackage{paralist}
 \RequirePackage{hyperref}
 \usepackage[utf8]{inputenc} %unicode support
 %\usepackage[applemac]{inputenc} %applemac support if unicode package fails
 %\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                             %%
@@ -72,14 +74,15 @@
 %%                                             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-\def\includegraphic{}
-\def\includegraphics{}
-
+%\def\includegraphic{}
+%\def\includegraphics{}
 
 
 %%% Put your definitions there:
 \startlocaldefs
+
+\newcommand{\tickYes}{\checkmark}
+
 \endlocaldefs
 
 
@@ -244,7 +247,6 @@ The study reveals that the magnitude of a user's inaccuracies is proportional to
 %%%%%%%%%%%%%%%%
 %% Background %%
 %%
-\section*{Content}
 
 \section*{Introduction}\label{sec:intro}
 
@@ -259,6 +261,164 @@ This map is used to facilitate collaboration between the multiple interfaces.
 Users can pass materials between the interfaces using their knowledge of their physical positions.
 When a material transfer is initiated the system can use the direction defined by the user and the generated map to find the interface the materials should be sent to.
 
+\begin{figure}[h!]
+   \centering
+   \caption{An example of how content items can be transferred between linked interfaces using flicking.}
+   \includegraphics[width=0.475\textwidth]{figures/flicking.png}
+   \label{fig:flick}
+\end{figure}
+
+Activities of content sharing in multi-interface environments are becoming more common~\cite{Nacenta2009}.
+Another example of where the knowledge of interface locations facilitates the passing of materials between separate devices originates from the SynergySpace project~\cite{Burd2009}.
+The software framework built for SynergySpace is intended for use on direct-touch interfaces, specifically multi-touch tabletops.
+This allows the system to allow users to perform a flicking~\cite{Reetz2006} motion to transfer content.
+Users flick a content item in the direction of the interface they wish to send content to.
+The item travels off the side of the initial interface and appears on the target interface as shown in Figure \ref{fig:flick}.
+When the item arrives on the target interface, the framework can use its knowledge of the interface locations to ensure the item travels into view from the direction of the source interface.
+This is intended to aid users in identifying where newly arrived content items were sent from.
+
+Both the Interactive Workspaces~\cite{Johanson2002} and SynergySpace~\cite{Burd2009} projects indicate that the ability for an interface to have knowledge of its location relative to linked interfaces surrounding it can be beneficial.
+Another example of the benefits of an interface knowing its location originates from a system which uses multiple projectors where projected outputs overlap.
+The outputs are seamlessly stitched together by the system to give the appearance of a single projection.
+In order for this to be achieved the system must have information regarding the relative positions of each projected output.
+The stitching of multiple projector outputs to create large public displays is becoming much more frequent~\cite{Jones2011}.
+Each system which utilises the stitching of visual outputs needs a method of attaining their locations.
+
+With systems requiring knowledge of the locations of their interfaces, a method of obtaining this positional information is needed.
+It is possible to measure the location and orientation of an interface using physical tools like rulers and protractors. 
+Because of the time consuming nature of this manual measurement strategy it is best suited for an environment in which the interfaces remain in a fixed position for long periods of time.
+
+However, there are scenarios in which the interfaces may be moved on a regular basis.
+For example, the SynergySpace project~\cite{Burd2009} is intended for classroom environments.
+These classroom environments are physical spaces in which furniture is frequently moved or rearranged to accommodate different learning activities during the course of a day~\cite{Tiburcio2005}.
+Therefore, it is likely that any interfaces in the environment used by the system will not remain in fixed positions.
+Measuring the locations and angles of each interface in the environment directly, then inputting this information into the system will take time on every reconfiguration of the environment.
+In this time the system will not function as intended because the system's knowledge concerning the positions of interfaces will be incorrect.
+
+Incorrect knowledge of interface positions is problematic for systems which use the information to stitch multiple visual outputs~\cite{Dietz2004,Jones2011}.
+The image displayed by a repositioned interface would no longer align with the output from other linked interfaces and therefore would not be appropriately stitched.
+
+Therefore, a method of obtaining the position of an interface quickly, without the need for time consuming measurements, is required.
+
+
+\section*{Background}\label{sec:related}
+
+Obtaining the position of an interface can be achieved through technological means.
+The use of RFID chips~\cite{Ni2004} is one such technological approach.
+These devices are inexpensive and can be used to get the positional information of the object they are attached to.
+However, the accuracy of locations given by RFID chips is dependent on the number of sensors in an environment.
+Despite the relatively low cost of the chips, the large number of sensors needed for accurate readings can be expensive.
+Also, the addition of more sensors requires the system to spend more time compiling the locational information for each RFID chip detected~\cite{Ni2004}.
+The same trade-off between expense and accuracy is also present for similar technologies using electro-magnetic waves, such as Wi-Fi~\cite{Cheng2005}.
+
+Infra-red sensors can be used to attain the locations of interfaces~\cite{Kortuem2005}.
+By detecting the relative location and strength of known infra-red light sources, a device with infra-red sensors can determine its position.
+However, the technology is very sensitive and small changes in the light level can result in the calculated location varying from the sensors' actual locations to a large extent~\cite{Kortuem2005}.
+This technology can also be affected by obstruction.
+An object blocking an infra-red sensor's view of one or more infra-red light sources can result in the system obtaining incorrect positional information.
+Therefore, for this technology to be used in a system, the environment must be clear of obstruction and have a consistent light level.
+These two restraints make this technology suitable for only a small number of scenarios.
+
+Visible light can be used for detecting the location of an interface~\cite{Lee2004}.
+Using light sensing technology, an interface can detect its location by using patterns projected from a light source.
+However, like infra-red sensors~\cite{Kortuem2005}, these visible light sensors require a clear line of sight to the light source.
+If obstructed, a sensor's reading would result in the incorrect calculation of its location.
+
+Visual markers called fiducials~\cite{Bose1990}, which are often used in augmented reality systems, could also be used for obtaining the position of an interface.
+A camera is used to identify and locate the markers which each carry a unique pattern that the system can identify.
+Several markers positioned on or around an interface could be located by a fiducial recognition system.
+However, this technology requires a clear line of sight between the camera and the fiducials.
+Like other location sensing technologies~\cite{Lee2004,Kortuem2005,Ni2004}, obstructions around the interface can cause inaccurate results.
+
+When attempting to attain the location of an interface, an alternative to the use of sensing technologies is to utilise a technique driven by user input.
+An example of this alternative method is where users measure the locations of the interface directly and input the information into the system through text entry. 
+User inputs do have the disadvantage of relying on the accuracy of the users whereas sensing technologies can be relied on to be precise to a certain extent.
+The accuracy of users can be influenced by a range of factors which would not affect the accuracy of sensing technologies, such as the magnitude of the distances being measured~\cite{Al-Imam2006}.
+An inaccurate user-generated measurement, input as part of a location determining technique, would result in the calculated position of the interface being incorrect.
+Therefore, it is important to take into consideration the accuracy of users when utilising techniques which rely on their inputs.
+
+Observations on each technique discussed in this section show that each has strengths and weaknesses.
+For example, a number of technology-based location sensing techniques discussed~\cite{Bose1990,Lee2004,Kortuem2005,Ni2004} will produce inaccurate locational information if obstruction of their sensing components occurs.
+This is undesirable in any scenarios where obstruction may frequently occur.
+For example, environments in which many users may be present around the interfaces would be unsuitable for these technologies.
+A user may stand between the sensors and emitters used by the technologies to derive positional information.
+This highlights how the weaknesses of a technique may make it use undesirable for some scenarios.
+
+The technologies discussed in this section ~\cite{Bose1990,Lee2004,Kortuem2005,Ni2004} could also be considered unsuitable for systems in which the interface has no physical presence, such as those which use a projected output~\cite{Dietz2004,Jones2011}.
+The projected output of a system has no physical presence other than the surface it is projected onto.
+Several of the location sensing technologies discussed require an emitter or sensing device to be connected to the object being located ~\cite{Lee2004,Kortuem2005,Ni2004}.
+However, this is not feasible for systems where the interface is projected.
+The sensing device could be attached to the surface onto which the output is projected, but the repositioning of the output would require the sensing device to be repositioned separately which can be time consuming.
+A camera could be used to attain the locations of the projected interfaces as discussed by Dietz et al.~\cite{Dietz2004}.
+The projected output could also create virtual fiducial ~\cite{Bose1990} representations which can be located by a camera.
+However, for both of these solutions, obstruction of the camera would result in inaccurate positional information being created.
+Again, this highlights how the strengths and weaknesses of a position obtaining technique determine its suitability to a specific scenario.
+Therefore it is important to compare the attributes of each technique when considering their use in a specific scenario.
+
+
+% \section*{Tables}
+% \begin{table}[h!]
+% \caption{Sample table title. This is where the description of the table should go.}
+%       \begin{tabular}{cccc}
+%         \hline
+%            & B1  &B2   & B3\\ \hline
+%         A1 & 0.1 & 0.2 & 0.3\\
+%         A2 & ... & ..  & .\\
+%         A3 & ..  & .   & .\\ \hline
+%       \end{tabular}
+% \end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Comparison between the attributes of several position obtaining techniques.}
+\begin{tabular}
+{!{\vrule width 1.5pt}c|r!{\vrule width 1.5pt}c|c|c|c|c!{\vrule width 1.5pt}}
+\noalign{\hrule height 1.5pt}
+\multicolumn{2}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{ }
+								&Obstruction 		&\multirow{2}{*}{Quick} 	&\multirow{2}{*}{Accurate} 	&\multirow{2}{*}{Inexpensive}		&Not				\\
+\multicolumn{2}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{ }
+								&Tolerant 			&		 				&							&								&Encumbering		\\
+\noalign{\hrule height 1.5pt}
+\multirow{4}{*}{\textbf{Technology}}
+&RFID~\cite{Ni2004}				&\tickYes			&\tickYes				&\hspace{1.75cm}			&\hspace{1.75cm}				&\hspace{1.75cm}	\\
+\cline{2-7}
+&Infra-red~\cite{Kortuem2005}		&\hspace{1.75cm} 	&\tickYes				&\tickYes 					&								&					\\
+\cline{2-7}
+&Visible light~\cite{Lee2004}		&		 			&\tickYes				&\tickYes 					&								&\tickYes			\\
+\cline{2-7}
+&Fiducials~\cite{Bose1990}		&		 			&\tickYes				&\tickYes 					&								&\tickYes			\\
+\cline{1-7}
+\textbf{User Input}	
+&Direct Measurement				&\tickYes			&\hspace{1.8cm}			&\tickYes					&\tickYes 						&\tickYes			\\
+\noalign{\hrule height 1.5pt}
+\end{tabular}
+\label{table:techniquesComparison}
+\end{table}
+
+Table \ref{table:techniquesComparison} compares the attributes of the position obtaining techniques discussed in this section.
+Each attribute listed in the comparison is derived from observations relating to the strengths and weaknesses of the techniques;
+
+\begin{itemize}
+  \item If a technique is able to give reliable results despite obstructions surrounding an interface it is deemed \textit{Obstruction Tolerant}.
+  \item If the time taken to perform a technique is less than the time taken to measure the locations directly by hand it is deemed \textit{Quick}.
+  \item If a technique produces usable positional information it is deemed \textit{Accurate}.
+  \item If a technique does not require additional hardware to be purchased it is deemed \textit{Inexpensive}.
+  \item If a technique does not require an additional physical device to be attached to the interface it is deemed to be \textit{Not Encumbering}.
+\end{itemize}
+
+For each technology discussed in this section a tick is given under each heading it conforms to.
+In addition to the technologies discussed in this section, the user input based technique of directly measuring the location of the interfaces is also included.
+
+Table \ref{table:techniquesComparison} shows that none of the position obtaining techniques discussed are without a weakness.
+The majority of the technology based techniques have issues regarding obstruction which makes them unsuitable for use in the classroom scenario, discussed in Section \ref{sec:intro}.
+This is due to the potential obscuring of sensors and receivers by users in the environment.
+However, the alternative techniques which utilise RFID chips and direct measurements, also have weaknesses that make them unsuitable for this scenario.
+RFID tags may be too inaccurate or expensive to use and direct measurement would require a significant amount of time for remeasurement whenever the tabletop interfaces are moved.
+Therefore a new technique is needed for scenarios like the classroom example, where accurate measurements of the interface positions must be performed quickly with many users populating the environment.
+Therefore, a technique is required which is obstruction tolerant, quick, accurate, inexpensive and not encumbering.
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
 %% Backmatter begins here                   %%
@@ -267,14 +427,15 @@ When a material transfer is initiated the system can use the direction defined b
 
 \begin{backmatter}
 
-% \section*{Competing interests}
-%   The authors declare that they have no competing interests.
+\section*{Competing interests}
+  The authors declare that they have no competing interests.
 
-% \section*{Author's contributions}
-%     Text for this section \ldots
+\section*{Author's contributions}
+    Text for this section \ldots
 
-% \section*{Acknowledgements}
-%   Text for this section \ldots
+\section*{Acknowledgements}
+  Text for this section \ldots
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  The Bibliography                       %%
 %%                                                         %%

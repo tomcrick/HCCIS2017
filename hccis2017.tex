@@ -275,15 +275,15 @@ When a material transfer is initiated the system can use the direction defined b
 \end{figure}
 
 Activities of content sharing in multi-interface environments are becoming more common~\cite{Nacenta2009}.
-Another example of where the knowledge of interface locations facilitates the passing of materials between separate devices originates from the SynergySpace project~\cite{Burd2009}.
-The software framework built for SynergySpace is intended for use on direct-touch interfaces, specifically multi-touch tabletops.
+Another example of where the knowledge of interface locations facilitates the passing of materials between separate devices originates from the {\emph{SynergySpace}} project~\cite{Burd2009}.
+The software framework built for {\emph{SynergySpace}} is intended for use on direct-touch interfaces, specifically multi-touch tabletops.
 This allows the system to allow users to perform a flicking~\cite{Reetz2006} motion to transfer content.
 Users flick a content item in the direction of the interface they wish to send content to.
 The item travels off the side of the initial interface and appears on the target interface as shown in Figure \ref{fig:flick}.
 When the item arrives on the target interface, the framework can use its knowledge of the interface locations to ensure the item travels into view from the direction of the source interface.
 This is intended to aid users in identifying where newly arrived content items were sent from.
 
-Both the Interactive Workspaces~\cite{Johanson2002} and SynergySpace~\cite{Burd2009} projects indicate that the ability for an interface to have knowledge of its location relative to linked interfaces surrounding it can be beneficial.
+Both the {\emph{Interactive Workspaces}}~\cite{Johanson2002} and {\emph{SynergySpace}}~\cite{Burd2009} projects indicate that the ability for an interface to have knowledge of its location relative to linked interfaces surrounding it can be beneficial.
 Another example of the benefits of an interface knowing its location originates from a system which uses multiple projectors where projected outputs overlap.
 The outputs are seamlessly stitched together by the system to give the appearance of a single projection.
 In order for this to be achieved the system must have information regarding the relative positions of each projected output.
@@ -295,7 +295,7 @@ It is possible to measure the location and orientation of an interface using phy
 Because of the time consuming nature of this manual measurement strategy it is best suited for an environment in which the interfaces remain in a fixed position for long periods of time.
 
 However, there are scenarios in which the interfaces may be moved on a regular basis.
-For example, the SynergySpace project~\cite{Burd2009} is intended for classroom environments.
+For example, the {\emph{SynergySpace}} project~\cite{Burd2009} is intended for classroom environments.
 These classroom environments are physical spaces in which furniture is frequently moved or rearranged to accommodate different learning activities during the course of a day~\cite{Tiburcio2005}.
 Therefore, it is likely that any interfaces in the environment used by the system will not remain in fixed positions.
 Measuring the locations and angles of each interface in the environment directly, then inputting this information into the system will take time on every reconfiguration of the environment.
@@ -405,11 +405,11 @@ Table \ref{table:techniquesComparison} compares the attributes of the position o
 Each attribute listed in the comparison is derived from observations relating to the strengths and weaknesses of the techniques;
 
 \begin{itemize}
-  \item If a technique is able to give reliable results despite obstructions surrounding an interface it is deemed \textit{Obstruction Tolerant}.
-  \item If the time taken to perform a technique is less than the time taken to measure the locations directly by hand it is deemed \textit{Quick}.
-  \item If a technique produces usable positional information it is deemed \textit{Accurate}.
-  \item If a technique does not require additional hardware to be purchased it is deemed \textit{Inexpensive}.
-  \item If a technique does not require an additional physical device to be attached to the interface it is deemed to be \textit{Not Encumbering}.
+  \item If a technique is able to give reliable results despite obstructions surrounding an interface it is deemed {\emph{Obstruction Tolerant}}.
+  \item If the time taken to perform a technique is less than the time taken to measure the locations directly by hand it is deemed {\emph{Quick}}.
+  \item If a technique produces usable positional information it is deemed {\emph{Accurate}}.
+  \item If a technique does not require additional hardware to be purchased it is deemed {\emph{Inexpensive}}.
+  \item If a technique does not require an additional physical device to be attached to the interface it is deemed to be {\emph{Not Encumbering}}.
 \end{itemize}
 
 For each technology discussed in this section a tick is given under each heading it conforms to.
@@ -455,7 +455,7 @@ Each of the arrows must point towards a separate landmark.
 The angles of the user drawn arrows from the world's Y-axis, $\alpha$ and $\beta$, are used to determine the values used in calculating the location of the interface.
 For each of these two arrow, the angle between the local y-axis of the interface and the arrow is summed with $\theta$ to derive $\alpha$ and $\beta$.
 
-The angle between the two arrows, \textit{S}, is used in conjunction with the angle between one of the arrows and the local representation of the real world environment's Y-axis, \textit{T}, to determine the location of the interface.
+The angle between the two arrows, {\emph{S}}, is used in conjunction with the angle between one of the arrows and the local representation of the real world environment's Y-axis, {\emph{T}}, to determine the location of the interface.
 Algorithm~\ref{algo:location} outlines the calculations involved in determining the \textbf{x} and \textbf{y} values of the interface's centre point in the physical environment.
 The resulting values are relative to Landmark A's position shown in Figure~\ref{fig:trig}.
 
@@ -478,7 +478,7 @@ The resulting values are relative to Landmark A's position shown in Figure~\ref{
 \INDSTATE[2] d = $\sin (B) * (u\ / \sin (S))$
 \INDSTATE[2] x = $\sin (T) * (d\ / \sin (90\degree))$
 \INDSTATE[2] y = $\sin (R) * (d\ / \sin (90\degree))$
-\STATE \textit{return}\ x, y
+\STATE {\emph{return}}\ x, y
 \end{algorithmic}
 \end{Algorithm}
 \end{figure}
@@ -488,13 +488,13 @@ The technique only needs one known value before use; this is the distance betwee
 Since it is a requirement of the technique that these landmarks are not moved, this value will not need to be re-measured.
 Therefore the technique can be performed relatively quickly once this measurement is obtained in comparison to measuring the locations of the interfaces directly.
 This ability to be performed quickly without the need for repeated, time consuming measurements makes the technique suitable for any scenarios where the interfaces may be moved regularly.
-Because of this the technique can be deemed \textit{quick}.
+Because of this the technique can be deemed {\emph{quick}}.
 
 Because the technique does not rely on any additional technologies there is no additional cost for its implementation into a system.
-This independence from additional hardware ensures that the technique is \textit{inexpensive} and \textit{not encumbering}.
+This independence from additional hardware ensures that the technique is {\emph{inexpensive}} and {\emph{not encumbering}}.
 Also, due to the technique's dependence on user inputs, rather than technologies, it is made suitable for use in environments where there may be many obstructions, such as the users themselves, around the interfaces.
 If any immovable obstructions are present in the physical space between the interface and the reference points, a user can utilise their knowledge of the environment to make an informed placement of an arrow.
-Therefore the technique can be deemed \textit{obstruction tolerant}.
+Therefore the technique can be deemed {\emph{obstruction tolerant}}.
 
 The technique's design does allow for its use on interfaces which do not utilise direct-touch inputs.
 However, the ability to directly manipulate the arrows may be advantageous when trying to achieve an alignment between an on-screen arrow and a physical landmark. 
@@ -503,7 +503,7 @@ An indirect input device may draw a user's attention away from the interface, in
 The technique's suitability for direct-touch interfaces is enhanced by the fact that text entry, which would be required with other user input based techniques, through touch interfaces can be inaccurate due to the lack of tactile feedback they offer~\cite{Weiss2009}.
 
 This technique is obstruction tolerant, quick, inexpensive and not encumbering.
-However, its dependence on the accuracy of a user's judgement of direction has the implication that the locational information it produces may not be \textit{accurate}.
+However, its dependence on the accuracy of a user's judgement of direction has the implication that the locational information it produces may not be {\emph{accurate}}.
 The inaccuracies in a user's input into the technique will result in the calculated position of the interface deviating from the interface's actual location.
 This deviation between the calculated and actual interfaces locations could make this technique too inaccurate for use in some scenarios.
 Therefore, it is important to discover how a user's inaccuracies when performing the technique affect the resulting value.
@@ -525,8 +525,8 @@ The technique was implemented into a software framework and deployed on four mul
 
 % New line behaviour
 
-Software for the study was constructed using SynergyNet~\cite{AlAgha2010}, a multi-touch software framework.
-The SynergyNet framework utilises a number of third party libraries to support a wide range of functions such as networking, gesture recognition and multimedia support, in addition to the management of multiple touch inputs.
+Software for the study was constructed using {\emph{SynergyNet}}~\cite{AlAgha2010}, a multi-touch software framework.
+The {\emph{SynergyNet}} framework utilises a number of third party libraries to support a wide range of functions such as networking, gesture recognition and multimedia support, in addition to the management of multiple touch inputs.
 The framework is designed so that applications can easily be created using its content system.
 These applications can then take advantage of the framework's features.
 The technique was implemented as part of an application which allowed for it to utilise a touch based input.
@@ -572,12 +572,12 @@ Each table interface had a resolution of 1024 by 768 displayed on a ...mm by ...
 Two hypotheses were proposed prior to the study beginning:
 
 \begin{itemize}
-\item[\textbf{Hypothesis 1}] \textit{The error of the technique's result is proportional to the deviation of participant drawn arrows from their optimal angles.}
+\item[\textbf{Hypothesis 1}] {\emph{The error of the technique's result is proportional to the deviation of participant drawn arrows from their optimal angles.}}
 
 To support or disprove this hypothesis, the optimal angles of an interface were compared with the $\alpha$, $\beta$ and $\theta$ angles of the arrows drawn by the participants for each execution of the technique.
 The deviation of a participant's arrows from their optimal angles could then be compared to the difference between the corresponding interface's technique calculated and actual positions.
 
-\item[\textbf{Hypothesis 2}] \textit{As participant's gain experience with the technique, their accuracy improves.}
+\item[\textbf{Hypothesis 2}] {\emph{As participant's gain experience with the technique, their accuracy improves.}}
 
 This hypothesis was derived from the observation that as participants gain experience with an interaction technique their performance improves~\cite{Constantine1999}.
 If user accuracy is found to influence the technique's result it is important to understand changes in user accuracy caused by practice.

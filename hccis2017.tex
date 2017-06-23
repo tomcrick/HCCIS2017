@@ -600,7 +600,7 @@ This allowed any influences regarding the positioning of the interfaces to be di
 Each participant performed the technique 4 times, once on each interface resulting in 52 instances of the technique being executed.
 All the participants were right-handed males who used computers daily and had at least some prior experience using the stylus interaction employed by the tablet interfaces.
 
-\begin{figure}[h] % TODO Change to scatter plot with trendline plotting average deviation in user-angles against deviation from actual positions.
+\begin{figure}[h]
    \centering
    \caption{A scatter graph showing the correlation between the average inaccuracy of a participant's input into the technique and the error of the corresponding result.}
    \includegraphics[width=0.6\textwidth]{figures/angle_deviation_scatter.png}
@@ -621,7 +621,7 @@ As noted on the graph there is a set of outlying data which does not conform to 
 
 Figure~\ref{fig:boxPlot} shows the average deviation of participant drawn arrows from their equivalent optimal angles over the number of times a participant has performed the technique.
 If hypothesis 2 was correct, the mean of participants' inaccuracies should decrease as the participants' experience with the technique increases.
-However,  the graph shows there is no discernible improvement for any of the participant drawn arrows over the number of attempts made.
+However, the graph shows there is no discernible improvement for any of the participant drawn arrows over the number of attempts made.
 This indicates that there was no learning effect and that experience with the technique does not improve a participant's accuracy.
 The evidence indicates that hypothesis 2 is incorrect.
 
@@ -682,17 +682,26 @@ Using knowledge of where in an environment users may be less accurate, the numbe
 
 \section*{Conclusions}\label{sec:conclusion}
 
-Produced in this work is a technique that can employ a user's sense of direction to determine the location of an interface to a reasonable accuracy.
+Produced in this work is a technique that can employ a user's sense of direction to determine the location of an interface.
 The technique offers a method of informing a system of the location and orientation of its affiliated interfaces without the need for additional technologies or time consuming measurements. 
 This technique is obstruction tolerant, quick, inexpensive and not encumbering.
 However, the accuracy of the technique is dependant on the accuracy of users.
 
 The technique may be required to be made more accurate for use in some systems.
 The accuracy of participants in the study was determined not to improve with practice.
-Therefore attempts to improve the accuracy of users, and as a result reduce the error of the technique's result, cannot rely on users gaining experience with the technique.
+Therefore, attempts to improve the accuracy of users, and as a result reduce the error of the resulting calculated positions, cannot rely on users gaining experience with the technique.
 Future work involving this technique will require discovering what influences a user's accuracy.
 One such influence, discussed in the \nameref{sec:discussion} section, is the region of the environment relative to the landmarks which the display inhabits.
-Other potential influences could include the distance between the interface and the landmarks, the number of landmarks used and the size of the interface.
+Other potential influences could include the size of the interfaces in addition to the distance between the interface and the landmarks.
+
+% TODO Discussion of the `North' instruction causing confusion initially and how the use of rotating a box to align with the walls of a rectangular room could be a more intuitive solution.
+
+% TODO Discussion of a future version of the technique taking advantage of modern devices having in-built compasses.
+% - If the angle between the line from landmark to landmark and actual North is known, this removes the need to draw the `North' line.
+% - Are the compasses accurate enough for this technique? Note: compass accuracies differ between devices.
+% - Defeats the low tech nature of this solutions which currently requires a form of user input (could even be in-direct).
+
+
 The findings of any future studies concerning the technique could allow for improvements to its accuracy.
 Knowledge of how accurate an execution of the technique is likely to be allows a confidence rating to be employed.
 This confidence rating could be used to judge whether the result is usable for a specific scenario.
@@ -708,10 +717,12 @@ Through this confidence rating the best trade off could be discovered between th
 \begin{backmatter}
 
 \section*{Competing interests}
-  The authors declare that they have no competing interests.
+The authors declare that they have no competing interests.
 
 \section*{Author's contributions}
-    Text for this section \ldots
+JM developed the technique discussed in the paper, conducted the original study and was an author in both the initial draft and subsequent redraft of the manuscript.
+TC was an author in the manuscript's redraft.
+AH was an author in the manuscript's original draft.
 
 \section*{Acknowledgements}
 

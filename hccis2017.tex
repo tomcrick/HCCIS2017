@@ -260,17 +260,18 @@ The study reveals that the magnitude of a user's inaccuracies is proportional to
 
 \section*{Introduction}\label{sec:intro}
 
-Direct-touch interfaces provide an effective digital medium in which people can collaborate on various tasks, including learning~\cite{Marshall2007a,Marshall2008}. 
+Direct-touch interfaces provide an effective digital medium in which people can collaborate on various tasks~\cite{Marshall2008}. 
 Research regarding collaboration on direct-touch interfaces is generally focused on collaboration between multiple participants across a single interface~\cite{Piper2009,Rick2009,Ryall2006a}. 
-However, when multiple interfaces capable of interacting with each other are used, an opportunity arises for collaboration between participants at different interfaces.
+However, when multiple interfaces capable of interacting with each other are used, an opportunity arises for collaboration between users interacting with different interfaces.
 This use of multiple interfaces in a shared environment can be beneficial for collaboration~\cite{Wallace2008a,Wallace2009}.
 
-The physical locations of interfaces can be used to aid tasks involving interaction between linked devices.
+The physical locations of interfaces can be used to aid tasks involving interaction between networked devices.
 For example, the Interactive Workspaces project~\cite{Johanson2002} generates a map of interface locations.
 This map is used to facilitate collaboration between the multiple interfaces.
 Users can pass materials between the interfaces using their knowledge of their physical positions.
 When a material transfer is initiated the system can use the direction defined by the user and the generated map to find the interface the materials should be sent to.
 
+% TODO Will need a new graphic here as we used this one before.
 \begin{figure}[h!]
    \centering
    \caption{An example of how content items can be transferred between linked interfaces using flicking.}
@@ -279,31 +280,31 @@ When a material transfer is initiated the system can use the direction defined b
 \end{figure}
 
 Activities of content sharing in multi-interface environments are becoming more common~\cite{Nacenta2009}.
-Another example of where the knowledge of interface locations facilitates the passing of materials between separate devices originates from the {\emph{SynergySpace}} project~\cite{Burd2009}.
-The software framework built for {\emph{SynergySpace}} is intended for use on direct-touch interfaces, specifically multi-touch tabletops.
-This allows the system to allow users to perform a flicking~\cite{Reetz2006} motion to transfer content.
+Another example of where the knowledge of interface locations facilitates the passing of materials between separate devices originates from the {\emph{SynergyNet}} project~\cite{Burd2009}.
+The software framework built for {\emph{SynergyNet}} is intended for use on direct-touch interfaces, specifically multi-touch tabletops.
+This allows the system to allow users to perform a flicking motion~\cite{Reetz2006} to transfer content.
 Users flick a content item in the direction of the interface they wish to send content to.
-The item travels off the side of the initial interface and appears on the target interface as shown in Figure \ref{fig:flick}.
-When the item arrives on the target interface, the framework can use its knowledge of the interface locations to ensure the item travels into view from the direction of the source interface.
+The item travels off the side of the source interface and appears on the target interface as shown in Figure \ref{fig:flick}.
+When the item arrives on the target interface, the framework can use its knowledge of the interface locations to ensure the item travels into view from the direction of the source interface. % TODO Reference to Remote collab paper here.
 This is intended to aid users in identifying where newly arrived content items were sent from.
 
-Both the {\emph{Interactive Workspaces}}~\cite{Johanson2002} and {\emph{SynergySpace}}~\cite{Burd2009} projects indicate that the ability for an interface to have knowledge of its location relative to linked interfaces surrounding it can be beneficial.
+Both the {\emph{Interactive Workspaces}}~\cite{Johanson2002} and {\emph{SynergyNet}}~\cite{Burd2009} projects showcase the need for an interface to have knowledge of its location relative to networked interfaces surrounding it.
 Another example of the benefits of an interface knowing its location originates from a system which uses multiple projectors where projected outputs overlap.
 The outputs are seamlessly stitched together by the system to give the appearance of a single projection.
 In order for this to be achieved the system must have information regarding the relative positions of each projected output.
 The stitching of multiple projector outputs to create large public displays is becoming much more frequent~\cite{Jones2011}.
 Each system which utilises the stitching of visual outputs needs a method of attaining their locations.
 
-With systems requiring knowledge of the locations of their interfaces, a method of obtaining this positional information is needed.
+With systems requiring knowledge of the locations of their interfaces, a method of obtaining this information is needed.
 It is possible to measure the location and orientation of an interface using physical tools like rulers and protractors. 
 Because of the time consuming nature of this manual measurement strategy it is best suited for an environment in which the interfaces remain in a fixed position for long periods of time.
 
 However, there are scenarios in which the interfaces may be moved on a regular basis.
-For example, the {\emph{SynergySpace}} project~\cite{Burd2009} is intended for classroom environments.
+For example, the {\emph{SynergyNet}} project~\cite{Burd2009} is intended for classroom environments.
 These classroom environments are physical spaces in which furniture is frequently moved or rearranged to accommodate different learning activities during the course of a day~\cite{Tiburcio2005}.
 Therefore, it is likely that any interfaces in the environment used by the system will not remain in fixed positions.
-Measuring the locations and angles of each interface in the environment directly, then inputting this information into the system will take time on every reconfiguration of the environment.
-In this time the system will not function as intended because the system's knowledge concerning the positions of interfaces will be incorrect.
+Measuring the locations and angles of each interface in the environment directly (i.e. with measuring tapes, rulers and/or protractors), then inputting this information into the system will take time on every reconfiguration of the environment.
+In this time the system will not function as intended because its knowledge of interface positions will be incorrect.
 
 Incorrect knowledge of interface positions is problematic for systems which use the information to stitch multiple visual outputs~\cite{Dietz2004,Jones2011}.
 The image displayed by a repositioned interface would no longer align with the output from other linked interfaces and therefore would not be appropriately stitched.

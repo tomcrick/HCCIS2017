@@ -600,14 +600,14 @@ This allowed any influences regarding the positioning of the interfaces to be di
 Each participant performed the technique 4 times, once on each interface resulting in 52 instances of the technique being executed.
 All the participants were right-handed males who used computers daily and had at least some prior experience using the stylus interaction employed by the tablet interfaces.
 
-\begin{figure}[h]
+\begin{figure}[h] % TODO Change to scatter plot with trendline plotting average deviation in user-angles against deviation from actual positions.
    \centering
    \caption{A scatter graph showing the correlation between the average inaccuracy of a participant's input into the technique and the error of the corresponding result.}
    \includegraphics[width=0.6\textwidth]{figures/angle_deviation_scatter.png}
-   \label{fig:scatter}
+   \label{fig:scatterAverage}
 \end{figure}
 
-Figure~\ref{fig:scatter} shows the average deviation of each participant's arrows from their optimal equivalents against the resulting positional information's average deviation from the actual location and orientation.
+Figure~\ref{fig:scatterAverage} shows the average deviation of each participant's arrows from their optimal equivalents against the resulting positional information's average deviation from the actual location and orientation.
 The graph in the figure indicates a general trend that as the average deviation from the optimum increases, the difference between an interface's actual and calculated positions increases.
 This supports hypothesis 1 as a proportional relationship between the participant's inaccuracy and the error of the technique's result is demonstrated by the graph.
 As noted on the graph there is a set of outlying data which does not conform to this trend, this is discussed in the \nameref{sec:discussion} section.
@@ -628,23 +628,22 @@ The evidence indicates that hypothesis 2 is incorrect.
 
 \section*{Discussion}\label{sec:discussion}
 
-\begin{figure}[bp]
-   \centering
-   \caption{A bar chart showing the relation between the magnitude of participant inaccuracies and the error of the technique's result.}
-   \includegraphics[width=0.9\textwidth]{figures/total_deviation_vs_angle_deviations.png}
-   \label{fig:barReflect}
-\end{figure}
-
 As noted in the \nameref{sec:results} section, there is a subset of results which do not conform to the general trend of the data.
 This subset consists of 8 results.
-These outlying results are circled in Figure~\ref{fig:scatter} outside the grouping of the majority of data.
+These outlying results are circled in Figure~\ref{fig:scatterAverage} outside the grouping of the majority of data.
 The data outside this subset of results implies that there is a proportional relationship between a user's accuracy and the error of the result.
 However, these outlying results represent instances where a participant has been relatively inaccurate in comparison to other executions of the technique but a position with little deviation from the interface's actual position has been calculated.
 This implies that the relationship between a user's inaccuracies and the error of the technique's result is more complex than hypothesis 1 states.
 
+\begin{figure}[h] % TODO Change to scatter plot with trendlines plotting deviations in each user-angles against deviation from actual positions.
+   \centering
+   \caption{A scatter graph showing the correlation between the specific inaccuracies of a participant's input into the technique and the error of the corresponding result.}
+   \includegraphics[width=0.9\textwidth]{figures/total_deviation_vs_angle_deviations.png}
+   \label{fig:scatterIndividual}
+\end{figure}
+
 It is possible that one of the arrows used by the technique as an input has a greater influence over the result than the others.
-The bars above the x-axis of the graph shown in Figure~\ref{fig:barReflect} represent deviation of participant drawn arrows from their corresponding optimums for all 52 instances of the technique being performed.
-Under each of these bars, beneath the x-axis, is another bar which represents the error of the corresponding instance of the technique's result.
+The points in the graph shown in Figure~\ref{fig:scatterIndividual} represent deviation of individual participant drawn arrows from their corresponding optimums for all 52 instances of the technique being performed.
 The graph highlights the general trend of participant's total inaccuracy increasing with the error of the result.
 If any particular arrow input into the technique has a greater influence than the others then a relationship between the inaccuracies of the arrow and the result would be apparent.
 For example, if arrow 1 had a significantly greater influence than arrows 2 and 3 then a correlation between the size of the participant inaccuracies when drawing this arrow and the magnitude of the error in the technique's result would be apparent.
@@ -652,7 +651,7 @@ However, no relation between the inaccuracy for a single arrow and the error of 
 
 It is possible that a specific combination of arrows may have the greatest influence on the result, rather than a single arrow.
 If this were true it would mean that one of the arrows would have comparatively little influence on the technique's result.
-In circumstances where the participant inaccuracy for this inconsequential arrow is large, but is small for the other two arrows, the total deviation from the arrow optimums would not be proportional to the result's error.
+In circumstances where the participant inaccuracy for a hypothetical inconsequential arrow is large, but is small for the other two arrows, the total deviation from the arrow optimums would not be proportional to the result's error.
 This would account for the outlying data.
 However, the data from the study does not support this as no relationship between the inaccuracy of two arrows and the error of the technique's result is apparent.
 
@@ -660,7 +659,7 @@ There is a further possibility that different individual arrows, or combination 
 This could be due to the interface's proximity to the landmarks.
 If an interface inhabits a region of the display where one of the landmarks used by the technique is significantly closer than the other, it is possible that the arrow pointing towards this landmark may hold a greater or lesser influence than in other regions of the environment.
 Further study is required to discover if this theory is correct.
-If true, knowledge of which arrow or combinations of arrows are the most influential in specific areas of an environment could be used to allow the system to reduce the impact of user inaccuracy.
+If true, knowledge of which arrow or combinations of arrows are the most influential in specific areas of an environment could be employed to allow the system to reduce the impact of user inaccuracy.
 
 Because users do not appear to become more accurate with experience, alternative methods of improving the accuracy of the technique will need to be employed.
 Confidence ratings could be used to reduce the potential error of the technique's results.
@@ -677,7 +676,7 @@ A greater confidence rating implies a higher probability of a more accurate calc
 However, one of the main strengths of this technique is the short amount of time it requires in comparison to the alternative of measuring the position of an interface directly.
 Users were noted to take an average of 26.9 seconds per each performance of the technique in the study.
 Repeating the technique increases the amount of time required to calculate the position on an interface.
-It is important to consider the trade-off between the accuracy gained from repeats of the technique and the additional time required from users.
+It is important to consider the trade-off between the accuracy gained from repeating the technique and the additional time required from users.
 Using knowledge of where in an environment users may be less accurate, the number of times the technique is repeated could be kept to a minimum allowing for the best trade-off between time taken and accuracy.
 
 

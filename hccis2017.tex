@@ -288,7 +288,7 @@ The item travels off the side of the source interface and appears on the target 
 When the item arrives on the target interface, the framework can use its knowledge of the interface locations to ensure the item travels into view from the direction of the source interface. % TODO Reference to Remote collab paper here.
 This is intended to aid users in identifying where newly arrived content items were sent from.
 
-Both the {\emph{Interactive Workspaces}}~\cite{Johanson2002} and {\emph{SynergyNet}}~\cite{Burd2009} projects showcase the need for an interface to have knowledge of its location relative to networked interfaces surrounding it.
+Both the {\emph{Interactive Workspaces}}~\cite{Johanson2002} and {\emph{SynergyNet}} projects showcase the need for an interface to have knowledge of its location relative to networked interfaces surrounding it.
 Another example of the benefits of an interface knowing its location originates from a system which uses multiple projectors where projected outputs overlap.
 The outputs are seamlessly stitched together by the system to give the appearance of a single projection.
 In order for this to be achieved the system must have information regarding the relative positions of each projected output.
@@ -300,7 +300,7 @@ It is possible to measure the location and orientation of an interface using phy
 Because of the time consuming nature of this manual measurement strategy it is best suited for an environment in which the interfaces remain in a fixed position for long periods of time.
 
 However, there are scenarios in which the interfaces may be moved on a regular basis.
-For example, the {\emph{SynergyNet}} project~\cite{Burd2009} is intended for classroom environments.
+For example, the {\emph{SynergyNet}} project is intended for classroom environments.
 These classroom environments are physical spaces in which furniture is frequently moved or rearranged to accommodate different learning activities during the course of a day~\cite{Tiburcio2005}.
 Therefore, it is likely that any interfaces in the environment used by the system will not remain in fixed positions.
 Measuring the locations and angles of each interface in the environment directly (i.e. with measuring tapes, rulers and/or protractors), then inputting this information into the system will take time on every reconfiguration of the environment.
@@ -328,15 +328,15 @@ However, the technology is very sensitive and small changes in the light level c
 This technology can also be affected by obstruction.
 An object blocking an infra-red sensor's view of one or more infra-red light sources can result in the system obtaining incorrect positional information.
 Therefore, for this technology to be used in a system, the environment must be clear of obstruction and have a consistent light level.
-These two restraints make this technology suitable for only a small number of scenarios.
+These two restraints make this technology unsuitable for a number of potential usage scenarios.
 
 Visible light can be used for detecting the location of an interface~\cite{Lee2004}.
 Using light sensing technology, an interface can detect its location by using patterns projected from a light source.
-However, like infra-red sensors~\cite{Kortuem2005}, these visible light sensors require a clear line of sight to the light source.
-If obstructed, a sensor's reading would result in the incorrect calculation of its location.
+However, similar to infra-red sensors, these visible light sensors require a clear view of as much of the projected light pattern as possible.
+If obstructed, a sensor's reading would result an inaccurate calculation of its location.
 
 Visual markers called fiducials~\cite{Bose1990}, which are often used in augmented reality systems, could also be used for obtaining the position of an interface.
-A camera is used to identify and locate the markers which each carry a unique pattern that the system can identify.
+A camera is used to identify and locate the markers which each carry a unique pattern recognisable by machine vision.
 Several markers positioned on or around an interface could be located by a fiducial recognition system.
 However, this technology requires a clear line of sight between the camera and the fiducials.
 Like other location sensing technologies~\cite{Lee2004,Kortuem2005,Ni2004}, obstructions around the interface can cause inaccurate results.
@@ -351,33 +351,8 @@ Therefore, it is important to take into consideration the accuracy of users when
 Observations on each technique discussed in this section show that each has strengths and weaknesses.
 For example, a number of technology-based location sensing techniques discussed~\cite{Bose1990,Lee2004,Kortuem2005,Ni2004} will produce inaccurate locational information if obstruction of their sensing components occurs.
 This is undesirable in any scenarios where obstruction may frequently occur.
-For example, environments in which many users may be present around the interfaces would be unsuitable for these technologies.
-A user may stand between the sensors and emitters used by the technologies to derive positional information.
-This highlights how the weaknesses of a technique may make it use undesirable for some scenarios.
-
-The technologies discussed in this section ~\cite{Bose1990,Lee2004,Kortuem2005,Ni2004} could also be considered unsuitable for systems in which the interface has no physical presence, such as those which use a projected output~\cite{Dietz2004,Jones2011}.
-The projected output of a system has no physical presence other than the surface it is projected onto.
-Several of the location sensing technologies discussed require an emitter or sensing device to be connected to the object being located ~\cite{Lee2004,Kortuem2005,Ni2004}.
-However, this is not feasible for systems where the interface is projected.
-The sensing device could be attached to the surface onto which the output is projected, but the repositioning of the output would require the sensing device to be repositioned separately which can be time consuming.
-A camera could be used to attain the locations of the projected interfaces as discussed by Dietz et al.~\cite{Dietz2004}.
-The projected output could also create virtual fiducial ~\cite{Bose1990} representations which can be located by a camera.
-However, for both of these solutions, obstruction of the camera would result in inaccurate positional information being created.
-Again, this highlights how the strengths and weaknesses of a position obtaining technique determine its suitability to a specific scenario.
-Therefore it is important to compare the attributes of each technique when considering their use in a specific scenario.
-
-
-% \section*{Tables}
-% \begin{table}[h!]
-% \caption{Sample table title. This is where the description of the table should go.}
-%       \begin{tabular}{cccc}
-%         \hline
-%            & B1  &B2   & B3\\ \hline
-%         A1 & 0.1 & 0.2 & 0.3\\
-%         A2 & ... & ..  & .\\
-%         A3 & ..  & .   & .\\ \hline
-%       \end{tabular}
-% \end{table}
+For example, environments in which many users may be present around the interfaces would be unsuited to these location-inferring technologies.
+A user may stand between the sensors and emitters used by the technologies to calculate positional information.
 
 \begin{table}[ht]
 \centering
@@ -444,16 +419,18 @@ Each attribute listed in the comparison is derived from observations relating to
   \item If a technique does not require an additional physical device to be attached to the interface it is deemed to be {\emph{Not Encumbering}}.
 \end{itemize}
 
-For each technology discussed in this section a tick is given under each heading it conforms to.
+For each technology discussed in this section a mark is given under each heading it conforms to.
 In addition to the technologies discussed in this section, the user input based technique of directly measuring the location of the interfaces is also included.
+% TODO Tie this checklist to NUI/HCI fundamentals checklist with a ref.
 
 Table \ref{table:techniquesComparison} shows that none of the position obtaining techniques discussed are without a weakness.
-The majority of the technology based techniques have issues regarding obstruction which makes them unsuitable for use in the classroom scenario, discussed in Section \ref{sec:intro}.
-This is due to the potential obscuring of sensors and receivers by users in the environment.
-However, the alternative techniques which utilise RFID chips and direct measurements, also have weaknesses that make them unsuitable for this scenario.
-RFID tags may be too inaccurate or expensive to use and direct measurement would require a significant amount of time for remeasurement whenever the tabletop interfaces are moved.
-Therefore a new technique is needed for scenarios like the classroom example, where accurate measurements of the interface positions must be performed quickly with many users populating the environment.
-Therefore, a technique is required which is obstruction tolerant, quick, accurate, inexpensive and not encumbering.
+The majority of the technology based techniques have issues regarding obstruction which makes them unsuitable for use in the common scenario of where the interfaces may have obstructions between them, like users.
+However, the techniques which do not have the issue of obstructions that utilise RFID chips and direct measurements, also have weaknesses that make them unsuitable for this scenario.
+RFID tags may be too inaccurate or expensive to use and direct measurement would require a comparatively significant amount of time for re-measurement whenever the interfaces are moved.
+
+A new technique is needed for scenarios like the classroom example given in the \nameref{sec:intro} section, where accurate measurements of the interface positions must be performed quickly with many users populating the environment.
+The technique is required to be obstruction tolerant, quick, accurate, inexpensive and not encumbering.
+A technique  which potentially fulfils these requirements is discussed in the \nameref{sec:technique} section.
 
 
 \section*{Technique}\label{sec:technique}
@@ -557,7 +534,7 @@ The technique was implemented into a software framework and deployed on four mul
 
 % New line behaviour
 
-Software for the study was constructed using {\emph{SynergyNet}}~\cite{AlAgha2010}, a multi-touch software framework.
+Software for the study was constructed using the {\emph{SynergyNet}} multi-touch software framework~\cite{AlAgha2010}.
 The {\emph{SynergyNet}} framework utilises a number of third party libraries to support a wide range of functions such as networking, gesture recognition and multimedia support, in addition to the management of multiple touch inputs.
 The framework is designed so that applications can easily be created using its content system.
 These applications can then take advantage of the framework's features.
@@ -584,8 +561,6 @@ With this known, arrow 3 is known through the process of elimination.
 When a participant was satisfied with the positioning of both these arrows they could then confirm their placement to complete the technique.
 
 \subsection*{Study Design}\label{sec:design}
-
-% Table measurements and layout
 
 The tablet interfaces used in the study were positioned in the configuration shown in Figure~\ref{fig:room}.
 This configuration was chosen to maximise the use of the four available interface devices in a non-symmetrical layout.
@@ -640,7 +615,7 @@ All the participants were right-handed males who used computers daily and had at
 Figure~\ref{fig:scatter} shows the average deviation of a participant's arrows from their optimal equivalents for each performance of the technique.
 The graph shown in the figure indicates a general trend that as the average deviation from the optimum increases, the distance between an interface's actual and calculated positions increases.
 This supports hypothesis 1 as a proportional relationship between the participant's inaccuracy and the error of the technique's result is demonstrated by the graph.
-As noted on the graph there is a set of outlying data which does not conform to this trend, this is discussed in Section~\ref{sec:discussion}.
+As noted on the graph there is a set of outlying data which does not conform to this trend, this is discussed in the \nameref{sec:discussion} section.
 
 \begin{figure}[h]
    \centering
@@ -665,7 +640,7 @@ The evidence indicates that hypothesis 2 is incorrect.
    \label{fig:barReflect}
 \end{figure}
 
-As noted in Section~\ref{sec:results}, there is a subset of results which do not conform to the general trend of the data.
+As noted in the \nameref{sec:results} section, there is a subset of results which do not conform to the general trend of the data.
 This subset consists of 8 results.
 These outlying results are circled in Figure~\ref{fig:scatter} outside the grouping of the majority of data.
 The data outside this subset of results implies that there is a proportional relationship between a user's accuracy and the error of the result.
@@ -713,8 +688,6 @@ Using knowledge of where in an environment users may be less accurate, the numbe
 
 \section*{Conclusions}\label{sec:conclusion}
 
-% New results = new things to discuss?
-
 Produced in this work is a technique that can employ a user's sense of direction to determine the location of an interface to a reasonable accuracy.
 The technique offers a method of informing a system of the location and orientation of its affiliated interfaces without the need for additional technologies or time consuming measurements. 
 This technique is obstruction tolerant, quick, inexpensive and not encumbering.
@@ -724,7 +697,7 @@ The technique may be required to be made more accurate for use in some systems.
 The accuracy of participants in the study was determined not to improve with practice.
 Therefore attempts to improve the accuracy of users, and as a result reduce the error of the technique's result, cannot rely on users gaining experience with the technique.
 Future work involving this technique will require discovering what influences a user's accuracy.
-One such influence, discussed in Section~\ref{sec:discussion}, is the region of the environment relative to the landmarks which the display inhabits.
+One such influence, discussed in the \nameref{sec:discussion} section, is the region of the environment relative to the landmarks which the display inhabits.
 Other potential influences could include the distance between the interface and the landmarks, the number of landmarks used and the size of the interface.
 The findings of any future studies concerning the technique could allow for improvements to its accuracy.
 Knowledge of how accurate an execution of the technique is likely to be allows a confidence rating to be employed.

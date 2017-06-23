@@ -272,21 +272,13 @@ This map is used to facilitate collaboration between the multiple interfaces.
 Users can pass materials between the interfaces using their knowledge of their physical positions.
 When a material transfer is initiated the system can use the direction defined by the user and the generated map to find the interface the materials should be sent to.
 
-% TODO Will need a new graphic here as we used this one before.
-\begin{figure}[h!]
-   \centering
-   \caption{An example of how content items can be transferred between linked interfaces using flicking.}
-   \includegraphics[width=0.6\textwidth]{figures/flicking.png}
-   \label{fig:flick}
-\end{figure}
-
 Activities of content sharing in multi-interface environments are becoming more common~\cite{Nacenta2009}.
 Another example of where the knowledge of interface locations facilitates the passing of materials between separate devices originates from the {\emph{SynergyNet}} project~\cite{Burd2009}.
 The software framework built for {\emph{SynergyNet}} is intended for use on direct-touch interfaces, specifically multi-touch tabletops.
 This allows the system to allow users to perform a flicking motion~\cite{Reetz2006} to transfer content.
 Users flick a content item in the direction of the interface they wish to send content to.
-The item travels off the side of the source interface and appears on the target interface as shown in Figure \ref{fig:flick}.
-When the item arrives on the target interface, the framework can use its knowledge of the interface locations to ensure the item travels into view from the direction of the source interface. % TODO Reference to Remote collab paper here.
+The item travels off the side of the source interface and appears on the target interface.
+When the item arrives on the target interface, the framework can use its knowledge of the interface locations to ensure the item travels into view from the direction of the source interface~\cite{McNaughton2017}.
 This is intended to aid users in identifying where newly arrived content items were sent from.
 
 Both the {\emph{Interactive Workspaces}}~\cite{Johanson2002} and {\emph{SynergyNet}} projects showcase the need for an interface to have knowledge of its location relative to networked interfaces surrounding it.

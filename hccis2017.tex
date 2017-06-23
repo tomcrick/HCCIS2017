@@ -82,12 +82,13 @@
 
 %%% Put your definitions there:
 \startlocaldefs
-
-\newenvironment{Algorithm}[1]{\begin{minipage}{0.45\textwidth}\centering\begin{minipage}{#1}\begin{algorithm}[H]}{\end{algorithm}\end{minipage}\end{minipage}}
-
 \newcommand{\tickYes}{\checkmark}
 
+\newenvironment{Algorithm}[1]{\begin{minipage}{1\textwidth}\centering\begin{minipage}{#1}\begin{algorithm}[H]}
+{\end{algorithm}\vspace{0.1cm}\end{minipage}\end{minipage}}
+
 \newcommand{\INDSTATE}[1][1]{\STATE\hspace{#1\algorithmicindent}}
+\newcommand{\indItem}{\setlength\itemindent{25pt}\item}
 
 \endlocaldefs
 
@@ -455,26 +456,23 @@ The technique requires users to draw three arrows which relate to the locations 
 The first of the three arrows used in the technique determines the orientation of the interface it is drawn on.
 The user draws the arrow parallel to the imaginary line between the two landmarks.
 The angle between this arrow and the local Y-axis of the interface, $\theta$ represents the orientation of the display as shown in Figure~\ref{fig:orienTrig}.
-The user must draw this orientation arrow in the same direction on all the interfaces being located.
+The user should draw this orientation arrow in the same direction on all the interfaces being located.
 \textbf{$\theta$} can then be used to create a vector representing the real-world environment's Y-axis locally on the interface.
 This can then be used in calculating the interface's physical position.
-
-After drawing the orientation arrow the user is required to draw two further arrows which point directly to the landmarks (see Figure~\ref{fig:trig}).
-Each of the arrows must point towards a separate landmark.
-The angles of the user drawn arrows from the world's Y-axis, $\alpha$ and $\beta$, are used to determine the values used in calculating the location of the interface.
-For each of these two arrow, the angle between the local y-axis of the interface and the arrow is summed with $\theta$ to derive $\alpha$ and $\beta$.
-
-The angle between the two arrows, {\emph{S}}, is used in conjunction with the angle between one of the arrows and the local representation of the real world environment's Y-axis, {\emph{T}}, to determine the location of the interface.
-Algorithm~\ref{algo:location} outlines the calculations involved in determining the \textbf{x} and \textbf{y} values of the interface's centre point in the physical environment.
-The resulting values are relative to Landmark A's position shown in Figure~\ref{fig:trig}.
 
 \begin{figure}[h]
    \centering
    \caption{Calculation of a interface's location.}
    \includegraphics[width=0.475\textwidth]{figures/trig-illustration.png}
    \label{fig:trig}
+\end{figure}
 
-\begin{Algorithm}{6cm}
+After drawing the orientation arrow the user is required to draw two further arrows which point directly to the landmarks (see Figure~\ref{fig:trig}).
+Each of the arrows must point towards a separate landmark.
+The angles of the user drawn arrows from the world's Y-axis, $\alpha$ and $\beta$, are used to determine the values used in calculating the location of the interface.
+For each of these two arrows, the angle between the local y-axis of the interface and the arrow is summed with $\theta$ to derive $\alpha$ and $\beta$.
+
+\begin{algorithm}[h]
 \caption{Calculating the location of an interface.}
 \label{algo:location}
 \begin{algorithmic}
@@ -489,13 +487,16 @@ The resulting values are relative to Landmark A's position shown in Figure~\ref{
 \INDSTATE[2] y = $\sin (R) * (d\ / \sin (90\degree))$
 \STATE {\emph{return}}\ x, y
 \end{algorithmic}
-\end{Algorithm}
-\end{figure}
+\end{algorithm}
+
+The angle between the two arrows, {\emph{S}}, is used in conjunction with the angle between one of the arrows and the local representation of the real world environment's Y-axis, {\emph{T}}, to determine the location of the interface.
+Algorithm~\ref{algo:location} outlines the calculations involved in determining the \textbf{x} and \textbf{y} values of the interface's centre point in the physical environment.
+The resulting values are relative to Landmark A's position as shown in Figure~\ref{fig:trig}.
 
 This technique has a number of benefits over the alternatives of sensing technologies and direct measurements.
 The technique only needs one known value before use; this is the distance between the landmarks.
 Since it is a requirement of the technique that these landmarks are not moved, this value will not need to be re-measured.
-Therefore the technique can be performed relatively quickly once this measurement is obtained in comparison to measuring the locations of the interfaces directly.
+Therefore, the technique can be performed relatively quickly once this measurement is obtained in comparison to measuring the locations of the interfaces directly.
 This ability to be performed quickly without the need for repeated, time consuming measurements makes the technique suitable for any scenarios where the interfaces may be moved regularly.
 Because of this the technique can be deemed {\emph{quick}}.
 
@@ -503,15 +504,15 @@ Because the technique does not rely on any additional technologies there is no a
 This independence from additional hardware ensures that the technique is {\emph{inexpensive}} and {\emph{not encumbering}}.
 Also, due to the technique's dependence on user inputs, rather than technologies, it is made suitable for use in environments where there may be many obstructions, such as the users themselves, around the interfaces.
 If any immovable obstructions are present in the physical space between the interface and the reference points, a user can utilise their knowledge of the environment to make an informed placement of an arrow.
-Therefore the technique can be deemed {\emph{obstruction tolerant}}.
+Therefore, the technique can be deemed {\emph{obstruction tolerant}}.
 
 The technique's design does allow for its use on interfaces which do not utilise direct-touch inputs.
 However, the ability to directly manipulate the arrows may be advantageous when trying to achieve an alignment between an on-screen arrow and a physical landmark. 
 The act of aiming towards reference points allows for a form of direct feedback where the user can adjust the arrow until they believe they have the correct alignment.  
 An indirect input device may draw a user's attention away from the interface, interrupting their concentration when aligning the arrows with landmarks.
-The technique's suitability for direct-touch interfaces is enhanced by the fact that text entry, which would be required with other user input based techniques, through touch interfaces can be inaccurate due to the lack of tactile feedback they offer~\cite{Weiss2009}.
+The technique's suitability for direct-touch interfaces is enhanced by the fact that text entry, which would be required with other user input based techniques, through touch interfaces can be problematic due to their lack of tactile feedback~\cite{Weiss2009}.
 
-This technique is obstruction tolerant, quick, inexpensive and not encumbering.
+This technique has been presented as an obstruction tolerant, quick, inexpensive and not encumbering solution.
 However, its dependence on the accuracy of a user's judgement of direction has the implication that the locational information it produces may not be {\emph{accurate}}.
 The inaccuracies in a user's input into the technique will result in the calculated position of the interface deviating from the interface's actual location.
 This deviation between the calculated and actual interfaces locations could make this technique too inaccurate for use in some scenarios.

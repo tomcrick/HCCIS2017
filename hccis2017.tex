@@ -302,26 +302,24 @@ The image displayed by a repositioned interface would no longer align with the o
 
 \section*{Background}\label{sec:related}
 
-Obtaining the position of an interface can be achieved through technological means.
+Obtaining the position of an interface can be achieved through a variety of technological means.
 The use of RFID chips~\cite{Ni2004} is one such technological approach.
-These devices are inexpensive and can be used to get the positional information of the object they are attached to.
+These devices are inexpensive and can be used to get the positional information of the object to which they are attached.
 However, the accuracy of locations given by RFID chips is dependent on the number of sensors in an environment.
 Despite the relatively low cost of the chips, the large number of sensors needed for accurate readings can be expensive.
 Also, the addition of more sensors requires the system to spend more time compiling the positional information for each RFID chip detected~\cite{Ni2004}.
-The same trade-off between expense and accuracy is also present for similar technologies using electro-magnetic waves, such as Wi-Fi~\cite{Cheng2005}.
+The same trade-off between expense and accuracy is also present for similar technologies using electromagnetic frequencies, such as wi-fi~\cite{Cheng2005}.
 
-Infra-red sensors can be used to attain the locations of interfaces~\cite{Kortuem2005}.
+Infra-red sensors can be used to obtain the locations of interfaces~\cite{Kortuem2005}.
 By detecting the relative location and strength of known infra-red light sources, a device with infra-red sensors can determine its position.
-However, the technology is very sensitive and small changes in the light level can result in the calculated location varying from the sensors' actual locations to a large extent~\cite{Kortuem2005}.
-This technology can also be affected by obstruction.
-An object blocking an infra-red sensor's view of one or more infra-red light sources can result in the system obtaining incorrect positional information.
+However, the technology is extremely sensitive and small changes in the light level can result in the calculated location varying from the sensors' actual locations to a significant degree~\cite{Kortuem2005}.
+This technology can also be affected by obstruction; an object blocking an infra-red sensor's view of one or more infra-red light sources can result in the system obtaining incorrect positional information.
 Therefore, for this technology to be used in a system, the environment must be clear of obstruction and have a consistent light level.
 These two restraints make this technology unsuitable for a number of potential usage scenarios.
 
-Visible light can be used for detecting the location of an interface~\cite{Lee2004}.
+Visible light can also be used for detecting the location of an interface~\cite{Lee2004}.
 Using light sensing technology, an interface can detect its location by using patterns projected from a light source.
-However, similar to infra-red sensors, these visible light sensors require a clear view of as much of the projected light pattern as possible.
-If obstructed, a sensor's reading would result an inaccurate calculation of its location.
+However, similar to infra-red sensors, these visible light sensors require a clear view of as much of the projected light pattern as possible; if obstructed, a sensor's reading would also result an inaccurate calculation of its location.
 
 Visual markers called fiducials~\cite{Bose1990}, which are often used in augmented reality systems, could also be used for obtaining the position of an interface.
 A camera is used to identify and locate the markers which each carry a unique pattern recognisable by machine vision.
@@ -329,7 +327,7 @@ Several markers positioned on or around an interface could be located by a fiduc
 However, this technology requires a clear line of sight between the camera and the fiducials.
 Like other location sensing technologies~\cite{Lee2004,Kortuem2005,Ni2004}, obstructions around the interface can cause inaccurate results.
 
-When attempting to attain the location of an interface, an alternative to the use of sensing technologies is to utilise a technique driven by user input.
+When attempting to obtain the location of an interface, an alternative to the use of sensing technologies is to utilise a technique driven by user input.
 An example of this alternative method is where users measure the locations of the interface directly and input the information into the system through text entry. 
 User inputs do have the disadvantage of relying on the accuracy of the users whereas sensing technologies can be relied on to be precise to a certain extent.
 The accuracy of users can be influenced by a range of factors which would not affect the accuracy of sensing technologies, such as the magnitude of the distances being measured~\cite{Al-Imam2006}.
@@ -340,7 +338,7 @@ Observations on each technique discussed in this section show that each has stre
 For example, a number of technology-based location sensing techniques discussed~\cite{Bose1990,Lee2004,Kortuem2005,Ni2004} will produce inaccurate positional information if obstruction of their sensing components occurs.
 This is undesirable in any scenarios where obstruction may frequently occur.
 For example, environments in which many users may be present around the interfaces would be unsuited to these location-inferring technologies.
-A user may stand between the sensors and emitters used by the technologies to calculate positional information.
+A user may stand between the sensors used by the technologies to calculate positional information.
 
 \begin{table}[ht]
 \centering
@@ -400,26 +398,26 @@ Table \ref{table:techniquesComparison} compares the attributes of the position o
 Each attribute listed in the comparison is derived from observations relating to the strengths and weaknesses of the techniques;
 
 \begin{itemize}
-  \item If a technique is able to give reliable results despite obstructions surrounding an interface it is deemed {\emph{Obstruction Tolerant}}.
-  \item If the time taken to perform a technique is less than the time taken to measure the locations directly by hand it is deemed {\emph{Quick}}.
-  \item If a technique produces usable positional information it is deemed {\emph{Accurate}}.
-  \item If a technique does not require additional hardware to be purchased it is deemed {\emph{Inexpensive}}.
+  \item If a technique is able to give reliable results despite obstructions surrounding an interface it is deemed {\emph{Obstruction Tolerant}};
+  \item If the time taken to perform a technique is less than the time taken to measure the locations directly by hand it is deemed {\emph{Quick}};
+  \item If a technique produces usable positional information it is deemed {\emph{Accurate}};
+  \item If a technique does not require additional hardware to be purchased it is deemed {\emph{Inexpensive}};
   \item If a technique does not require an additional physical device to be attached to the interface it is deemed to be {\emph{Not Encumbering}}.
 \end{itemize}
 
-For each technology discussed in this section a mark is given under each heading it conforms to.
+For each technology discussed in this section a mark is given under each heading to which it conforms.
 In addition to the technologies discussed in this section, the user input based technique of directly measuring the location of the interfaces is also included.
 The significance of the list required attributes of each position obtaining technique is strengthened through their similarity to requirements often outlined for Human-Computer Interaction~\cite{Jacob1993} and Natural User Interface~\cite{Dietz2001} design.
 These are both domains which often encompass investigations into, and usage of, position obtaining techniques.
 
 Table \ref{table:techniquesComparison} shows that none of the position obtaining techniques discussed are without a weakness.
-The majority of the technology based techniques have issues regarding obstruction which makes them unsuitable for use in the common scenario of where the interfaces may have obstructions between them, like users.
+The majority of the technology based techniques have issues regarding obstruction which makes them unsuitable for use in the common scenario of where the interfaces may have obstructions between them, such as users.
 However, the techniques which do not have the issue of obstructions that utilise RFID chips and direct measurements, also have weaknesses that make them unsuitable for this scenario.
 RFID tags may be too inaccurate or expensive to use and direct measurement would require a comparatively significant amount of time for re-measurement whenever the interfaces are moved.
 
 A new technique is needed for scenarios like the classroom example given in the \nameref{sec:intro} section, where accurate measurements of the interface positions must be performed quickly with many users populating the environment.
 The technique is required to be obstruction tolerant, quick, accurate, inexpensive and not encumbering.
-A technique  which potentially fulfils these requirements is discussed in the \nameref{sec:technique} section.
+A technique  which potentially fulfils these requirements is presented in the \nameref{sec:technique} section.
 
 
 \section*{Technique}\label{sec:technique}

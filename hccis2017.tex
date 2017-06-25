@@ -524,17 +524,15 @@ The technique was implemented as part of an application within the {\emph{Synerg
 
 The arrows used in the implemented technique were designed to always originate from the centre of the interface.
 The tail of an arrow remained in the centre of the interface while the participant could drag the arrowhead to any location on display.
-The arrow being manipulated would therefore point from the centre of the interface towards the location of a participant's last relevant touch (relevant being defined as a touch within a certain distance of the arrowhead).
-This allowed participants to determine the direction and length of the arrow.
+The arrow being manipulated would therefore point from the centre of the interface towards the location of a participant's last relevant touch (relevant being defined as a touch within a certain distance of the arrowhead); this allowed participants to determine the direction and length of the arrow.
 The participant could reposition an arrowhead as much as they wanted.
 Once a participant was finished establishing an arrow's direction they would then be expected to press a button on the interface to confirm their arrangement.
 
 The technique first asked participants to draw a single arrow.
 This arrow corresponds to arrow 1 in Figure~\ref{fig:orienTrig} which is used to establish the interface's orientation.
-Once the participant confirmed their arrangement of this arrow they would then be asked to position two arrows together.
-These are arrows 2 and 3 shown in figure~\ref{fig:trig}.
+Once the participant confirmed their arrangement of this arrow they would then be asked to position two arrows together; these are arrows 2 and 3 shown in Figure~\ref{fig:trig}.
 While each of the arrows for this stage of the technique is intended to point towards a landmark, the target for each arrow is not made explicit to the participant.
-As long as each of the two arrows points at a different landmark it does not matter which landmark they point to.
+As long as each of the two arrows points at a different landmark it does not matter to which landmark they point.
 The assumption is made in this implementation that all the interfaces are positioned in the space to the right of the line heading from landmark A to B.
 Therefore, the arrow with the smallest clockwise angle from the environment's y-axis is arrow 2.
 With this known, arrow 3 is known through the process of elimination.
@@ -552,10 +550,10 @@ The orientations were chosen to include
 \end{inparaenum}
 
 Video recordings of the participants using the technique were made so that information regarding the timings and possible mistakes could be observed.
-The application which the technique was implemented into was designed to record the local angle of any of the arrows drawn by a participant.
+The application in which the technique was implemented was designed to record the local angle of any of the arrows drawn by a participant.
 Any of the values used by the technique to calculate an interface's location were also recorded along with the resulting positional information.
 
-Before the study took place direct measurements of the table's positions and orientations were made by the study organisers.
+Before the study took place, direct measurements of the table's positions and orientations were made by the study organisers.
 Using these values and the technique's calculations the angle of the arrows which would produce perfectly accurate positional information could be derived.
 Comparing these optimal angles with the angles of user drawn arrows allowed for a participant's inaccuracy to be quantified.
 

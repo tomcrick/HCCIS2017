@@ -128,7 +128,7 @@
    addressref={aff1},                   % id's of addresses, e.g. {aff1,aff2}
    corref={aff1},                       % id of corresponding address, if any
 %   noteref={n1},                        % id's of article notes, if any
-   email={j.a.mcnaughton@durham.ac.uk}   % email address
+   email={j.a.mcnaughton@durham.ac.uk, tcrick@cardiffmet.ac.uk, andrew.hatch@durham.ac.uk}   % All email addresses.
 ]{\inits{JM}\fnm{James} \snm{McNaughton}}
 \author[
    addressref={aff2},
@@ -136,7 +136,7 @@
 ]{\inits{TC}\fnm{Tom} \snm{Crick}}
 \author[
    addressref={aff1},
-   email={a.hatch@durham.ac.uk}
+   email={andrew.hatch@durham.ac.uk}
 ]{\inits{AH}\fnm{Andrew} \snm{Hatch}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -340,59 +340,7 @@ This is undesirable in any scenarios where obstruction may frequently occur.
 For example, environments in which many users may be present around the interfaces would be unsuited to these location-inferring technologies.
 A user may stand between the sensors used by the technologies to calculate positional information.
 
-\begin{table}[ht]
-\centering
-\caption{Comparison between the attributes of several position obtaining techniques.}
-\begin{tabular}
-{!{\vrule width 1.5pt}c|r!{\vrule width 1.5pt}c|c|c|c|c!{\vrule width 1.5pt}}
-\noalign{\hrule height 1.5pt}
-	\multicolumn{2}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{ }
-	&\rotatebox[origin=c]{90}{Obstruction} \rotatebox[origin=c]{90}{Tolerant }
-	&\rotatebox[origin=c]{90}{Quick} 
-	&\rotatebox[origin=c]{90}{Accurate}
-	&\rotatebox[origin=c]{90}{Inexpensive}
-	&\rotatebox[origin=c]{90}{Not} \rotatebox[origin=c]{90}{ Encumbering } \\
-\noalign{\hrule height 1.5pt}
-	\multirow{4}{*}{\textbf{Technology}}
-	&RFID~\cite{Ni2004}
-	&\tickYes
-	&\tickYes
-	&\hspace{0.75cm}	
-	&\hspace{0.75cm}	
-	&\hspace{0.75cm} \\
-\cline{2-7}
-	&Infra-red~\cite{Kortuem2005}
-	&\hspace{0.75cm}	
-	&\tickYes
-	&\tickYes 
-	&
-	& \\
-\cline{2-7}
-	&Visible light~\cite{Lee2004}
-	&
-	&\tickYes
-	&\tickYes
-	&
-	&\tickYes \\
-\cline{2-7}
-	&Fiducials~\cite{Bose1990}
-	&
-	&\tickYes
-	&\tickYes
-	&
-	&\tickYes \\
-\cline{1-7}
-	\textbf{User Input}
-	&Direct Measurement
-	&\tickYes
-	&\hspace{0.75cm}	
-	&\tickYes
-	&\tickYes
-	&\tickYes \\
-\noalign{\hrule height 1.5pt}
-\end{tabular}
-\label{table:techniquesComparison}
-\end{table}
+% table:techniquesComparison
 
 Table \ref{table:techniquesComparison} compares the attributes of the position obtaining techniques discussed in this section.
 Each attribute listed in the comparison is derived from observations relating to the strengths and weaknesses of the techniques;
@@ -431,12 +379,7 @@ The distances between these two landmarks must be made known to the system.
 Any of the resulting calculated positions and orientations from the technique are relative to the landmarks.
 The technique requires users to draw three arrows which relate to the locations of the landmarks.
 
-\begin{figure}[h]
-   \centering
-   \caption{Values used to calculate an interface's orientation.}
-   \includegraphics[width=0.6\textwidth]{figures/orientation_maths.png}
-   \label{fig:orienTrig}
-\end{figure}
+% fig:orienTrig
 
 The first of the three arrows used in the technique determines the orientation of the interface on which it is drawn.
 The user draws the arrow parallel to the imaginary line between the two landmarks.
@@ -445,12 +388,7 @@ The user should draw this orientation arrow in the same direction on all the int
 \textbf{$\theta$} can then be used to create a vector representing the real-world environment's y-axis locally on the interface.
 This can then be used in calculating the interface's physical position.
 
-\begin{figure}[h]
-   \centering
-   \caption{Calculation of a interface's location.}
-   \includegraphics[width=0.75\textwidth]{figures/trig-illustration.png}
-   \label{fig:trig}
-\end{figure}
+% fig:trig
 
 After drawing the orientation arrow, the user is required to draw two further arrows which point directly to the landmarks (see Figure~\ref{fig:trig}).
 Each of the arrows must point towards a separate landmark.
@@ -505,12 +443,7 @@ Therefore, it is important to discover how a user's inaccuracies when performing
 
 \section*{Study}\label{sec:study}
 
-\begin{figure}[ht]
-  \centering
-   \caption{The positions and orientations of the markers and interfaces used in the user study.}
-  \includegraphics[width=0.9\textwidth]{figures/studyLayout.png}
-   \label{fig:room}
-\end{figure}
+% fig:room
 
 A study was conducted to determine how a user's accuracy affected the error of the presented technique's calculated interface positions.
 The study focused on discovering whether the results given by the technique could be accurate enough for use in a specific scenario.
@@ -583,24 +516,14 @@ This allowed any influences regarding the positioning of the interfaces to be di
 Each participant performed the technique 4 times -- once on each interface -- resulting in 52 instances of the technique being executed.
 All the participants were right-handed males who used computers daily and had at least some prior experience using the stylus interaction employed by the tablet interfaces.
 
-\begin{figure}[h]
-   \centering
-   \caption{A scatter graph showing the correlation between the average inaccuracy of a participant's input into the technique and the error of the corresponding result.}
-   \includegraphics[width=0.95\textwidth]{figures/angle_deviation_scatter.png}
-   \label{fig:scatterAverage}
-\end{figure}
+% fig:scatterAverage
 
 Figure~\ref{fig:scatterAverage} shows the average deviation of each participant's arrows from their optimal equivalents against the resulting positional information's average deviation from the actual location and orientation.
 The graph in the figure indicates a general trend that as the average deviation from the optimum increases, the difference between an interface's actual and calculated positions increases.
 This supports Hypothesis 1 as a proportional relationship between the participant's inaccuracy and the error of the technique's result is demonstrated by the graph.
 As noted on the graph there is a set of outlying data which does not conform to this trend; this is discussed in the \nameref{sec:discussion} section.
 
-\begin{figure}[h]
-   \centering
-   \caption{A box plot graph showing the inaccuracy of participants against the number of times they have performed the technique.}
-   \includegraphics[width=0.75\textwidth]{figures/angle_deviation_boxplots.png}
-   \label{fig:boxPlot}
-\end{figure}
+% fig:boxPlot
 
 Figure~\ref{fig:boxPlot} shows the average deviation of participant drawn arrows from their equivalent optimal angles over the number of times a participant has performed the technique.
 If Hypothesis 2 was correct, the mean of participants' inaccuracies should decrease as the participants' experience with the technique increases.
@@ -617,12 +540,7 @@ The data outside this subset of results implies that there is a proportional rel
 However, these outlying results represent instances where a participant has been relatively inaccurate in comparison to other executions of the technique but a position with little deviation from the interface's actual position has been calculated.
 This implies that the relationship between a user's inaccuracies and the error of the technique's result is more complex than Hypothesis 1 states.
 
-\begin{figure}[h]
-   \centering
-   \caption{A scatter graph showing the correlation between the specific inaccuracies of a participant's input into the technique and the error of the corresponding result.}
-   \includegraphics[width=0.95\textwidth]{figures/total_deviation_vs_angle_deviations.png}
-   \label{fig:scatterIndividual}
-\end{figure}
+% fig:scatterIndividual
 
 It is possible that one of the arrows used by the technique as an input has a greater influence over the result than the others.
 The points in the graph shown in Figure~\ref{fig:scatterIndividual} represent deviation of individual participant drawn arrows from their corresponding optimums for all 52 instances of the technique being performed.
@@ -712,17 +630,30 @@ Through this confidence rating the best trade off could be discovered between th
 
 \begin{backmatter}
 
+\section*{Funding}
+This work was partially funded under the UK's EPSRC/ERSC Teaching and Learning Research Programme (TLRP) {\emph{SynergyNet}} project (RES-139-25-0400).
+
+\section*{Availability of data and material}
+The software used in the study discussed in this paper is openly available as part of the SynergyNet~2.5 Software framework: \url{https://github.com/synergynet/synergynet2.5}.
+
+\section*{Ethics approval and consent to participate}
+The study presented adhered to the ethical standards of research. 
+Ethics approval to conduct this study was obtained from the Science Faculty Ethics Committee at Durham University.
+Participants received full details on the study beforehand, were asked to sign a consent form and were permitted to withdraw at any time.
+
+\section*{Acknowledgements}
+The authors would like to thank the members of the Durham University Technology Enhanced Learning Special Interest Group for supporting the redrafting of this manuscript.
+
 \section*{Competing interests}
 The authors declare that they have no competing interests.
 
+\section*{Consent for publication }
+All authors have approved the final manuscript and fully support its publication.
+
 \section*{Author's contributions}
-JM developed the technique discussed in the paper, conducted the original study and was an author in both the initial draft and subsequent redraft of the manuscript.
+JM developed the technique discussed in the manuscript, conducted the original study and was an author in both the initial draft and subsequent redraft.
 TC was an author in the manuscript's redraft, as well as providing technical advice and analysis.
 AH was an author in the manuscript's original draft.
-
-\section*{Acknowledgements}
-
-This work was partially funded under the UK's EPSRC/ERSC Teaching and Learning Research Programme (TLRP) {\emph{SynergyNet}} project (RES-139-25-0400).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  The Bibliography                       %%
@@ -766,8 +697,56 @@ This work was partially funded under the UK's EPSRC/ERSC Teaching and Learning R
 
 %%
 %% Do not use \listoffigures as most will included as separate files
+\section*{Figures}
 
-% \section*{Figures}
+\begin{figure}[h!]
+   \centering
+   \caption{\csentence{Orientation Trigonometry.}
+   Values used to calculate an interface's orientation.}
+   %\includegraphics[width=0.6\textwidth]{OrientationTrigonometry.png}
+   \label{fig:orienTrig}
+\end{figure}
+
+\begin{figure}[h!]
+   \centering
+   \caption{\csentence{Position Trigonometry.}
+   Calculation of a interface's location.}
+   %\includegraphics[width=0.75\textwidth]{PositionTrigonometry.png}
+   \label{fig:trig}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+   \caption{\csentence{Study Layout.}
+   The positions and orientations of the markers and interfaces used in the user study.}
+  %\includegraphics[width=0.9\textwidth]{StudyLayout.png}
+   \label{fig:room}
+\end{figure}
+
+\begin{figure}[h!]
+   \centering
+   \caption{\csentence{Angle Deviation Scatterplot.}
+   A scatter graph showing the correlation between the average inaccuracy of a participant's input into the technique and the error of the corresponding result.}
+   %\includegraphics[width=0.95\textwidth]{AngleDeviationScatterplot.png}
+   \label{fig:scatterAverage}
+\end{figure}
+
+\begin{figure}[h!]
+   \centering
+   \caption{\csentence{Angle Deviation Boxplot.}
+   A box plot graph showing the inaccuracy of participants against the number of times they have performed the technique.}
+   %\includegraphics[width=0.75\textwidth]{AngleDeviationBoxplot.png}
+   \label{fig:boxPlot}
+\end{figure}
+
+\begin{figure}[h!]
+   \centering
+   \caption{\csentence{Total Deviation Scatterplot.}
+   A scatter graph showing the correlation between the specific inaccuracies of a participant's input into the technique and the error of the corresponding result.}
+   %\includegraphics[width=0.95\textwidth]{TotalDeviationScatterplot.png}
+   \label{fig:scatterIndividual}
+\end{figure}
+
 %   \begin{figure}[h!]
 %   \caption{\csentence{Sample figure title.}
 %       A short description of the figure content
@@ -786,8 +765,62 @@ This work was partially funded under the UK's EPSRC/ERSC Teaching and Learning R
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Use of \listoftables is discouraged.
-%%
-% \section*{Tables}
+\section*{Tables}
+
+\begin{table}[h!]
+\centering
+\caption{Comparison between the attributes of several position obtaining techniques.}
+\begin{tabular}
+{!{\vrule width 1.5pt}c|r!{\vrule width 1.5pt}c|c|c|c|c!{\vrule width 1.5pt}}
+\noalign{\hrule height 1.5pt}
+	\multicolumn{2}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{ }
+	&\rotatebox[origin=c]{90}{Obstruction} \rotatebox[origin=c]{90}{Tolerant }
+	&\rotatebox[origin=c]{90}{Quick} 
+	&\rotatebox[origin=c]{90}{Accurate}
+	&\rotatebox[origin=c]{90}{Inexpensive}
+	&\rotatebox[origin=c]{90}{Not} \rotatebox[origin=c]{90}{ Encumbering } \\
+\noalign{\hrule height 1.5pt}
+	\multirow{4}{*}{\textbf{Technology}}
+	&RFID~\cite{Ni2004}
+	&\tickYes
+	&\tickYes
+	&\hspace{0.75cm}	
+	&\hspace{0.75cm}	
+	&\hspace{0.75cm} \\
+\cline{2-7}
+	&Infra-red~\cite{Kortuem2005}
+	&\hspace{0.75cm}	
+	&\tickYes
+	&\tickYes 
+	&
+	& \\
+\cline{2-7}
+	&Visible light~\cite{Lee2004}
+	&
+	&\tickYes
+	&\tickYes
+	&
+	&\tickYes \\
+\cline{2-7}
+	&Fiducials~\cite{Bose1990}
+	&
+	&\tickYes
+	&\tickYes
+	&
+	&\tickYes \\
+\cline{1-7}
+	\textbf{User Input}
+	&Direct Measurement
+	&\tickYes
+	&\hspace{0.75cm}	
+	&\tickYes
+	&\tickYes
+	&\tickYes \\
+\noalign{\hrule height 1.5pt}
+\end{tabular}
+\label{table:techniquesComparison}
+\end{table}
+
 % \begin{table}[h!]
 % \caption{Sample table title. This is where the description of the table should go.}
 %       \begin{tabular}{cccc}

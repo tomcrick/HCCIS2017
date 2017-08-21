@@ -262,25 +262,19 @@ Finally, we make observations on the future extension and application of this te
 
 \section*{Introduction}\label{sec:intro}
 
-Direct-touch interfaces provide an effective digital medium in which people can collaborate on a broad range of tasks~\cite{Marshall2008}. 
+Direct-touch interfaces provide an effective digital medium in which people can collaborate on a broad range of tasks~\cite{Davidsen2016}. 
 Research regarding collaboration on direct-touch interfaces has generally focused on collaboration between multiple participants across a single interface~\cite{Piper2009,Rick2009,Ryall2006a}. 
 However, when multiple interfaces capable of interacting with each
 other are used, an opportunity arises for collaboration between users interacting with different interfaces; this use of multiple interfaces in a shared environment can be beneficial for collaboration~\cite{Wallace2008a,Wallace2009}.
 
 The physical locations of interfaces can be used to aid tasks involving interaction between networked devices.
-For example, the {\emph{Interactive Workspaces}} project~\cite{Johanson2002} generates a map of interface locations.
-This map is used to facilitate collaboration between the multiple interfaces; for example, users can pass materials between the interfaces using their knowledge of their physical positions.
-When a material transfer is initiated the system can use the direction defined by the user and the generated map to find the interface the materials should be sent to.
-
-Activities of content sharing in multi-interface environments are becoming more common~\cite{Nacenta2009}.
-Another example of where the knowledge of interface locations facilitates the passing of materials between separate devices originates from the {\emph{SynergyNet}} project~\cite{Burd2009}.
-The software framework built for {\emph{SynergyNet}} is intended for use on direct-touch interfaces, specifically multi-touch tabletops.
-This allows the system to enable users to perform a flicking gesture~\cite{Reetz2006} to transfer content; users flick a content item in the direction of the interface to which they wish to send content.
+One example of this is the {\emph{SynergyNet}} project, a software framework built for use on direct-touch interfaces, specifically multi-touch tabletops, which allows users to perform a flicking gesture to transfer content~\cite{McNaughton2017}
+Users flick a content item in the direction of the interface to which they wish to send content.
 The item travels off the side of the source interface and appears on the target interface.
-When the item arrives on the target interface, the framework can use its knowledge of the interface locations to ensure the item travels into view from the direction of the source interface~\cite{McNaughton2017}.
+When the item arrives on the target interface, the framework can use its knowledge of the interface locations to ensure the item travels into view from the direction of the source interface.
 This is intended to aid users in identifying from where newly arrived content items were sent.
 
-Both the {\emph{Interactive Workspaces}}~\cite{Johanson2002} and {\emph{SynergyNet}} projects showcase the need for an interface to have knowledge of its location relative to networked interfaces surrounding it.
+Projects like this showcase the need for an interface to have knowledge of its location relative to networked interfaces surrounding it.
 Another example of the benefits of an interface knowing its location originates from a system which uses multiple projectors where projected outputs overlap.
 The outputs are seamlessly stitched together by the system to give the appearance of a single projection.
 In order for this to be achieved the system must have information regarding the relative positions of each projected output.
@@ -296,19 +290,19 @@ These classroom environments are physical spaces in which furniture is frequentl
 Measuring the locations and angles of each interface in the environment directly (i.e. with measuring tapes, rulers and/or protractors), then inputting this information into the system will take time on every reconfiguration of the environment.
 In this time the system will not function as intended because its knowledge of interface positions will be incorrect.
 
-Incorrect knowledge of interface positions is problematic for systems which use the information to stitch multiple visual outputs~\cite{Dietz2004,Jones2011}.
+Incorrect knowledge of interface positions is problematic for systems which use the information to stitch multiple visual outputs~\cite{Jones2011}.
 The image displayed by a repositioned interface would no longer align with the output from other linked interfaces and therefore would not be appropriately stitched. Therefore, a method of obtaining the position of an interface quickly, without the need for time consuming measurements, is required.
 
 
 \section*{Background}\label{sec:related}
 
 Obtaining the position of an interface can be achieved through a variety of technological means.
-The use of RFID chips~\cite{Ni2004} is one such technological approach.
+The use of RFID chips~\cite{Ma2017} is one such technological approach.
 These devices are inexpensive and can be used to get the positional information of the object to which they are attached.
 However, the accuracy of locations given by RFID chips is dependent on the number of sensors in an environment.
 Despite the relatively low cost of the chips, the large number of sensors needed for accurate readings can be expensive.
-Also, the addition of more sensors requires the system to spend more time compiling the positional information for each RFID chip detected~\cite{Ni2004}.
-The same trade-off between expense and accuracy is also present for similar technologies using electromagnetic frequencies, such as wi-fi~\cite{Cheng2005}.
+Also, the addition of more sensors requires the system to spend more time compiling the positional information for each RFID chip detected~\cite{Ma2017}.
+The same trade-off between expense and accuracy is also present for similar technologies using electromagnetic frequencies, such as wi-fi~\cite{Khuong2017}.
 
 Infra-red sensors can be used to obtain the locations of interfaces~\cite{Kortuem2005}.
 By detecting the relative location and strength of known infra-red light sources, a device with infra-red sensors can determine its position.
@@ -317,15 +311,15 @@ This technology can also be affected by obstruction; an object blocking an infra
 Therefore, for this technology to be used in a system, the environment must be clear of obstruction and have a consistent light level.
 These two restraints make this technology unsuitable for a number of potential usage scenarios.
 
-Visible light can also be used for detecting the location of an interface~\cite{Lee2004}.
+Visible light can also be used for detecting the location of an interface~\cite{Smith2013}.
 Using light sensing technology, an interface can detect its location by using patterns projected from a light source.
 However, similar to infra-red sensors, these visible light sensors require a clear view of as much of the projected light pattern as possible; if obstructed, a sensor's reading would also result an inaccurate calculation of its location.
 
-Visual markers called fiducials~\cite{Bose1990}, which are often used in augmented reality systems, could also be used for obtaining the position of an interface.
+Visual markers called fiducials~\cite{Sagitov2017}, which are often used in augmented reality systems, could also be used for obtaining the position of an interface.
 A camera is used to identify and locate the markers which each carry a unique pattern recognisable by machine vision.
 Several markers positioned on or around an interface could be located by a fiducial recognition system.
 However, this technology requires a clear line of sight between the camera and the fiducials.
-Like other location sensing technologies~\cite{Lee2004,Kortuem2005,Ni2004}, obstructions around the interface can cause inaccurate results.
+Like other location sensing technologies~\cite{Smith2013,Kortuem2005,Ma2017}, obstructions around the interface can cause inaccurate results.
 
 When attempting to obtain the location of an interface, an alternative to the use of sensing technologies is to utilise a technique driven by user input.
 An example of this alternative method is where users measure the locations of the interface directly and input the information into the system through text entry. 
@@ -335,7 +329,7 @@ An inaccurate user-generated measurement, input as part of a location determinin
 Therefore, it is important to take into consideration the accuracy of users when utilising techniques which rely on their inputs.
 
 Observations on each technique discussed in this section show that each has strengths and weaknesses.
-For example, a number of technology-based location sensing techniques discussed~\cite{Bose1990,Lee2004,Kortuem2005,Ni2004} will produce inaccurate positional information if obstruction of their sensing components occurs.
+For example, a number of technology-based location sensing techniques discussed~\cite{Sagitov2017,Smith2013,Kortuem2005,Ma2017} will produce inaccurate positional information if obstruction of their sensing components occurs.
 This is undesirable in any scenarios where obstruction may frequently occur.
 For example, environments in which many users may be present around the interfaces would be unsuited to these location-inferring technologies.
 A user may stand between the sensors used by the technologies to calculate positional information.
@@ -503,7 +497,7 @@ The deviation of a participant's arrows from their optimal angles could then be 
 
 \item[\textbf{Hypothesis 2:}] {\emph{As participant's gain experience with the technique, their accuracy improves.}}
 
-This hypothesis was derived from the observation that as users gain experience with an interaction technique their performance improves~\cite{Constantine1999}.
+This hypothesis was derived from the observation that as users gain experience with an interaction technique their performance improves~\cite{Ji2016}.
 If user accuracy is found to influence the technique's result it is important to understand changes on it caused by practice.
 The order of the tables on which the technique was performed was changed between participants.
 This allowed any influences regarding the positioning of the interfaces to be distinguished from any learning effect the technique may have.
@@ -795,7 +789,7 @@ AH was an author in the manuscript's original draft.
 	&\rotatebox[origin=c]{90}{Not} \rotatebox[origin=c]{90}{ Encumbering } \\
 \noalign{\hrule height 1.5pt}
 	\multirow{4}{*}{\textbf{Technology}}
-	&RFID~\cite{Ni2004}
+	&RFID~\cite{Ma2017}
 	&\tickYes
 	&\tickYes
 	&\hspace{0.75cm}	
@@ -809,14 +803,14 @@ AH was an author in the manuscript's original draft.
 	&
 	& \\
 \cline{2-7}
-	&Visible light~\cite{Lee2004}
+	&Visible light~\cite{Smith2013}
 	&
 	&\tickYes
 	&\tickYes
 	&
 	&\tickYes \\
 \cline{2-7}
-	&Fiducials~\cite{Bose1990}
+	&Fiducials~\cite{Sagitov2017}
 	&
 	&\tickYes
 	&\tickYes

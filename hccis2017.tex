@@ -199,8 +199,8 @@
 % \parttitle{Second part title} %if any
 % Text for this section.
 
-In many co-located, collaborative systems there is a need for the devices used to be informed of the physical positions of their networked counterparts.
-This paper presents a novel method of utilising users' judgement of direction to obtain the location and orientation of a touch interface.
+In many co-located, collaborative systems there is a need for the constituent devices used to be aware of the physical positions of their networked counterparts.
+This paper addresses this challenge by presenting a novel method of utilising users' judgement of direction to obtain the location and orientation of a touch interface.
 The technique requires a user to draw several arrows on an interface which point towards physical landmarks in an environment.
 This allows for the setup of interface locations in a way which is \begin{inparaenum}[(i)] \item quick; \item inexpensive; \item not encumbering; and \item capable of being performed despite obstructions in the environment\end{inparaenum}.
 A user study is presented which investigates what influence a user's accuracy has on the technique's resulting calculated location of an interface.
@@ -217,7 +217,7 @@ Finally, we make observations on the future extension and application of this te
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{keyword}
-\kwd{Minimising user input, positioning, device location, touch devices, HCI}
+\kwd{User input, positioning, device location, touch devices, collaboration, HCI}
 \end{keyword}
 
 % MSC classifications codes, if any
@@ -263,30 +263,24 @@ Finally, we make observations on the future extension and application of this te
 \section*{Introduction}\label{sec:intro}
 
 Direct-touch interfaces provide an effective digital medium in which people can collaborate on a broad range of tasks~\cite{Davidsen2016}. 
-Research regarding collaboration on direct-touch interfaces has generally focused on collaboration between multiple participants across a single interface~\cite{Piper2009,Rick2009,Ryall2006a}. 
+Previous research regarding collaboration on direct-touch interfaces has generally focused on the collaboration between multiple participants across a single interface~\cite{Piper2009,Rick2009,Ryall2006a}. 
 However, when multiple interfaces capable of interacting with each
-other are used, an opportunity arises for collaboration between users interacting with different interfaces; this use of multiple interfaces in a shared environment can be beneficial for collaboration~\cite{Wallace2008a,Wallace2009}.
+other are used, an opportunity arises for collaboration between users interacting with different interfaces; this use of multiple interface types in a shared environment can be beneficial for collaboration~\cite{Wallace2008a,Wallace2009}.
 
-The physical locations of interfaces can be used to aid tasks involving interaction between networked devices.
-One example of this is the {\emph{SynergyNet}} project, a software framework built for use on direct-touch interfaces, specifically multi-touch tabletops, which allows users to perform a flicking gesture to transfer content~\cite{McNaughton2017}
-Users flick a content item in the direction of the interface to which they wish to send content.
-The item travels off the side of the source interface and appears on the target interface.
+The physical locations of interfaces can be used to aid tasks involving interaction between networked devices. One example of this is demonstrated in the {\emph{SynergyNet}} project, a software framework built for use on direct-touch interfaces, specifically multi-touch tabletops, which allows users to perform a flicking gesture to transfer content~\cite{McNaughton2017}.
+Users flick a content item in the direction of the interface to which they wish to send content; the item travels off the side of the source interface and appears on the target interface.
 When the item arrives on the target interface, the framework can use its knowledge of the interface locations to ensure the item travels into view from the direction of the source interface.
 This is intended to aid users in identifying from where newly arrived content items were sent.
 
-Projects like this showcase the need for an interface to have knowledge of its location relative to networked interfaces surrounding it.
+Projects such as {\emph{SynergyNet}} showcase the need for an interface to have knowledge of its location relative to networked interfaces surrounding it.
 Another example of the benefits of an interface knowing its location originates from a system which uses multiple projectors where projected outputs overlap.
 The outputs are seamlessly stitched together by the system to give the appearance of a single projection.
-In order for this to be achieved the system must have information regarding the relative positions of each projected output.
-The stitching of multiple projector outputs to create large public displays is becoming much more frequent~\cite{Jones2011}; each system which utilises the stitching of visual outputs needs a method of attaining their locations.
+In order for this to be achieved the system must have information regarding the relative positions of each projected output. The stitching of multiple projector outputs to create large public displays is becoming much more common~\cite{Jones2011}; furthermore, each system which utilises the stitching of visual outputs needs a method of attaining their locations.
 
-With systems requiring knowledge of the locations of their interfaces, a method of obtaining this information is needed.
-It is possible to measure the location and orientation of an interface using physical tools such as rulers and protractors. 
-Because of the time consuming nature of this manual measurement strategy it is best suited for an environment in which the interfaces remain in a fixed position for long periods of time.
-
+With systems requiring knowledge of the locations of their interfaces, a simple and effective method of obtaining this information is required.
+It is possible to measure the location and orientation of an interface using physical tools such as rulers and protractors; because of the time consuming nature of this manual measurement strategy it is best suited for an environment in which the interfaces remain in a fixed position for long periods of time.
 However, there are scenarios in which the interfaces may be moved on a regular basis.
-For example, the {\emph{SynergyNet}} project is intended for educational environments.
-These classroom environments are physical spaces in which furniture is frequently moved or rearranged to accommodate different learning activities during the course of a day~\cite{Tiburcio2005}; therefore, it is likely that any interfaces in the environment used by the system will not remain in fixed positions.
+For example, the {\emph{SynergyNet}} project is intended for educational environments; these classroom environments are physical spaces in which furniture is frequently moved or rearranged to accommodate different learning activities during the course of a day~\cite{Tiburcio2005}. It is therefore likely that any interfaces in the environment used by the system will not remain in fixed positions.
 Measuring the locations and angles of each interface in the environment directly (i.e. with measuring tapes, rulers and/or protractors), then inputting this information into the system will take time on every reconfiguration of the environment.
 In this time the system will not function as intended because its knowledge of interface positions will be incorrect.
 
@@ -298,17 +292,16 @@ The image displayed by a repositioned interface would no longer align with the o
 
 Obtaining the position of an interface can be achieved through a variety of technological means.
 The use of RFID chips~\cite{Ma2017} is one such technological approach.
-These devices are inexpensive and can be used to get the positional information of the object to which they are attached.
-However, the accuracy of locations given by RFID chips is dependent on the number of sensors in an environment.
-Despite the relatively low cost of the chips, the large number of sensors needed for accurate readings can be expensive.
+These devices are inexpensive and can be used to obtain the positional information of the object to which they are attached.
+However, the accuracy of locations given by RFID chips is dependent on the number of sensors in an environment -- despite the relatively low cost of the chips, the large number of sensors needed for accurate readings can be expensive.
 Also, the addition of more sensors requires the system to spend more time compiling the positional information for each RFID chip detected~\cite{Ma2017}.
 The same trade-off between expense and accuracy is also present for similar technologies using electromagnetic frequencies, such as wi-fi~\cite{Khuong2017}.
 
 Infra-red sensors can be used to obtain the locations of interfaces~\cite{Kortuem2005}.
 By detecting the relative location and strength of known infra-red light sources, a device with infra-red sensors can determine its position.
-However, the technology is extremely sensitive and small changes in the light level can result in the calculated location varying from the sensors' actual locations to a significant degree~\cite{Kortuem2005}.
-This technology can also be affected by obstruction; an object blocking an infra-red sensor's view of one or more infra-red light sources can result in the system obtaining incorrect positional information.
-Therefore, for this technology to be used in a system, the environment must be clear of obstruction and have a consistent light level.
+However, the technology is extremely sensitive and small changes in the ambient light level can result in the calculated location varying from the sensors' actual locations to a significant degree~\cite{Kortuem2005}.
+This technology can also be affected by obstructions; an object blocking an infra-red sensor's view of one or more infra-red light sources can result in the system obtaining incorrect positional information.
+Therefore, for this technology to be used in a system, the environment must be clear of obstructions and have a consistent ambient light level.
 These two restraints make this technology unsuitable for a number of potential usage scenarios.
 
 Visible light can also be used for detecting the location of an interface~\cite{Smith2013}.
@@ -321,50 +314,48 @@ Several markers positioned on or around an interface could be located by a fiduc
 However, this technology requires a clear line of sight between the camera and the fiducials.
 Like other location sensing technologies~\cite{Smith2013,Kortuem2005,Ma2017}, obstructions around the interface can cause inaccurate results.
 
-When attempting to obtain the location of an interface, an alternative to the use of sensing technologies is to utilise a technique driven by user input.
-An example of this alternative method is where users measure the locations of the interface directly and input the information into the system through text entry. 
-User inputs do have the disadvantage of relying on the accuracy of the users whereas sensing technologies can be relied on to be precise to a certain extent.
+When attempting to obtain the location of an interface, an alternative to using sensing technologies is to utilise a technique driven by user input.
+An example of this approach is where users measure the locations of the interface directly and input the information into the system through text entry. 
+User input approaches have the disadvantage of relying on the accuracy of the human input, whereas sensing technologies can be relied on to be precise within certain parameters.
 The accuracy of users can be influenced by a range of factors which would not affect the accuracy of sensing technologies, such as the magnitude of the distances being measured~\cite{Al-Imam2006}.
 An inaccurate user-generated measurement, input as part of a location determining technique, would result in the calculated position of the interface being incorrect.
-Therefore, it is important to take into consideration the accuracy of users when utilising techniques which rely on their inputs.
+Therefore, it is important to take into consideration the accuracy of human-generated input when utilising techniques which rely on this approach.
 
-Observations on each technique discussed in this section show that each has strengths and weaknesses.
+Observations on each technique discussed in this section demonstrates that each has strengths and weaknesses.
 For example, a number of technology-based location sensing techniques discussed~\cite{Sagitov2017,Smith2013,Kortuem2005,Ma2017} will produce inaccurate positional information if obstruction of their sensing components occurs.
 This is undesirable in any scenarios where obstruction may frequently occur.
-For example, environments in which many users may be present around the interfaces would be unsuited to these location-inferring technologies.
-A user may stand between the sensors used by the technologies to calculate positional information.
+For example, environments in which many users may be present around the interfaces would be unsuited to these location-inferring technologies; for example, a user may stand between the sensors used by the technologies to calculate positional information.
 
 % table:techniquesComparison
 
 Table \ref{table:techniquesComparison} compares the attributes of the position obtaining techniques discussed in this section.
-Each attribute listed in the comparison is derived from observations relating to the strengths and weaknesses of the techniques;
+Each attribute listed in the comparison is derived from observations relating to the strengths and weaknesses of the techniques;\newline
 
 \begin{itemize}
   \item If a technique is able to give reliable results despite obstructions surrounding an interface it is deemed {\emph{Obstruction Tolerant}};
   \item If the time taken to perform a technique is less than the time taken to measure the locations directly by hand it is deemed {\emph{Quick}};
   \item If a technique produces usable positional information it is deemed {\emph{Accurate}};
   \item If a technique does not require additional hardware to be purchased it is deemed {\emph{Inexpensive}};
-  \item If a technique does not require an additional physical device to be attached to the interface it is deemed to be {\emph{Not Encumbering}}.
+  \item If a technique does not require an additional physical device to be attached to the interface it is deemed to be {\emph{Not Encumbering}}.\newline
 \end{itemize}
 
-For each technology discussed in this section a mark is given under each heading to which it conforms.
-In addition to the technologies discussed in this section, the user input based technique of directly measuring the location of the interfaces is also included.
-The significance of the list required attributes of each position obtaining technique is strengthened through their similarity to requirements often outlined for Human-Computer Interaction~\cite{Jacob1993} and Natural User Interface~\cite{Dietz2001} design.
+For each approach discussed in this section a mark is given under each heading to which it conforms.
+The significance of the list required attributes of each position obtaining technique is strengthened through their similarity to requirements often outlined for human-computer interaction~\cite{Jacob1993}, user-centered modelling~\cite{mostafa-et-al-ai2016} and natural user interface~\cite{Dietz2001} design.
 These are both domains which often encompass investigations into, and usage of, position obtaining techniques.
 
-Table \ref{table:techniquesComparison} shows that none of the position obtaining techniques discussed are without a weakness.
-The majority of the technology based techniques have issues regarding obstruction which makes them unsuitable for use in the common scenario of where the interfaces may have obstructions between them, such as users.
+Table \ref{table:techniquesComparison} shows that none of the position-obtaining techniques discussed are without a weakness.
+The majority of the technology-based techniques have issues regarding obstruction which makes them unsuitable for use in scenarios where the interfaces may have obstructions between them, such as users.
 However, the techniques which do not have the issue of obstructions that utilise RFID chips and direct measurements, also have weaknesses that make them unsuitable for this scenario.
 RFID tags may be too inaccurate or expensive to use and direct measurement would require a comparatively significant amount of time for re-measurement whenever the interfaces are moved.
 
-A new technique is needed for scenarios like the classroom example given in the \nameref{sec:intro} section, where accurate measurements of the interface positions must be performed quickly with many users populating the environment.
-The technique is required to be obstruction tolerant, quick, accurate, inexpensive and not encumbering.
-A technique  which potentially fulfils these requirements is presented in the \nameref{sec:technique} section.
+A new approach is thus needed for scenarios such as the classroom example given in the \nameref{sec:intro} section, where accurate measurements of the interface positions must be performed quickly with many users populating the environment.
+As we have demonstrated, the technique is required to be obstruction tolerant, quick, accurate, inexpensive and not encumbering.
+Our approach, which potentially fulfils these requirements, is presented in the following section.
 
 
 \section*{Technique}\label{sec:technique}
 
-It is apparent that the presence of users can prove to be a major disruption to many location sensing technologies; we seek a technique which can not only continue to work as intended with users present but can utilise their presence.
+It is clear that the presence of users can prove to be a major disruption to many location sensing technologies; we thus seek a technique which can not only continue to work as intended with users present but can utilise their presence.
 In accordance with this observation, we propose a novel technique utilising user input that can determine an interface's location and orientation in a physical environment.
 This technique can employ users' mobility and sense of direction to overcome any obstructions which may have caused technological alternatives to produce inaccurate results.
 
@@ -377,17 +368,19 @@ The technique requires users to draw three arrows which relate to the locations 
 
 The first of the three arrows used in the technique determines the orientation of the interface on which it is drawn.
 The user draws the arrow parallel to the imaginary line between the two landmarks.
-The angle between this arrow and the local y-axis of the interface, $\theta$ represents the orientation of the display as shown in Figure~\ref{fig:orienTrig}.
+The angle between this arrow and the local y-axis of the interface, $\theta$, represents the orientation of the display as shown in Figure~\ref{fig:orienTrig}.
 The user should draw this orientation arrow in the same direction on all the interfaces being located.
-\textbf{$\theta$} can then be used to create a vector representing the real-world environment's y-axis locally on the interface.
-This can then be used in calculating the interface's physical position.
+\textbf{$\theta$} can then be used to create a vector representing the real-world environment's y-axis locally on the interface; this can then be used in calculating the interface's physical position.
 
 % fig:trig
 
-After drawing the orientation arrow, the user is required to draw two further arrows which point directly to the landmarks (see Figure~\ref{fig:trig}).
-Each of the arrows must point towards a separate landmark.
+After drawing the orientation arrow, the user is required to draw two further arrows which point directly to the landmarks (see Figure~\ref{fig:trig}); each of the arrows must point towards a separate landmark.
 The angles of the user drawn arrows from the world's y-axis, $\alpha$ and $\beta$, are used to determine the values used in calculating the location of the interface.
 For each of these two arrows, the angle between the local y-axis of the interface and the arrow is summed with $\theta$ to derive $\alpha$ and $\beta$.
+
+The angle between the two arrows, {\emph{S}}, is used in conjunction with the angle between one of the arrows and the local representation of the real world environment's y-axis, {\emph{T}}, to determine the location of the interface.
+Algorithm~\ref{algo:location} outlines the calculations involved in determining the \textbf{x} and \textbf{y} values of the interface's centre point in the physical environment.
+The resulting values are relative to Landmark A's position as shown in Figure~\ref{fig:trig}.
 
 \begin{algorithm}[h]
 \caption{Calculating the location of an interface.}
@@ -406,10 +399,6 @@ For each of these two arrows, the angle between the local y-axis of the interfac
 \end{algorithmic}
 \end{algorithm}
 
-The angle between the two arrows, {\emph{S}}, is used in conjunction with the angle between one of the arrows and the local representation of the real world environment's y-axis, {\emph{T}}, to determine the location of the interface.
-Algorithm~\ref{algo:location} outlines the calculations involved in determining the \textbf{x} and \textbf{y} values of the interface's centre point in the physical environment.
-The resulting values are relative to Landmark A's position as shown in Figure~\ref{fig:trig}.
-
 This technique has a number of benefits over the alternatives of sensing technologies and direct measurements.
 The technique only needs one known value before use; this is the distance between the landmarks.
 Since it is a requirement of the technique that these landmarks are not moved, this value will not need to be re-measured.
@@ -417,13 +406,13 @@ Therefore, the technique can be performed relatively quickly once this measureme
 This ability to be performed quickly without the need for repeated, time consuming measurements makes the technique suitable for any scenarios where the interfaces may be moved regularly, such as educational environments.
 Because of this the technique can be deemed {\emph{Quick}}.
 
-Because the technique does not rely on any additional technologies there is no extra cost for its implementation into a system.
+Furthermore, the technique does not rely on any additional technologies, so there is no extra cost for its implementation into a system.
 This independence from additional hardware ensures that the technique is {\emph{Inexpensive}} and {\emph{Not Encumbering}}.
-Also, due to the technique's dependence on user inputs, rather than technologies, it is made suitable for use in environments where there may be many obstructions, such as the users themselves, around the interfaces.
+Also, due to the technique's dependence on user inputs, rather than technology, it is made suitable for use in environments where there may be numerous obstructions, such as the users themselves, around the interfaces.
 If any immovable obstructions are present in the physical space between the interface and the reference points, a user can utilise their knowledge of the environment to make an informed placement of an arrow.
 Therefore, the technique can be deemed {\emph{Obstruction Tolerant}}.
 
-The technique's design does allow for its use on interfaces which do not utilise direct-touch inputs.
+The technique's design also allows for its use on interfaces which do not utilise direct-touch inputs.
 However, the ability to directly manipulate the arrows may be advantageous when trying to achieve an alignment between an on-screen arrow and a physical landmark. 
 The act of aiming towards reference points allows for a form of direct feedback where the user can adjust the arrow until they believe they have the correct alignment.  
 An indirect input device may draw a user's attention away from the interface, interrupting their concentration when aligning the arrows with landmarks.
@@ -446,24 +435,23 @@ The technique was implemented into a software framework and deployed on four tou
 \subsection*{Implementation of the Technique}\label{sec:implementation}
 
 Software for the study was constructed using the {\emph{SynergyNet}} multi-touch software framework~\cite{AlAgha2010}.
-The framework utilises a number of third party libraries to support a wide range of functions such as networking, touch gesture recognition and multimedia support.
-The technique was implemented as part of an application within the {\emph{SynergyNet}} framework which allowed for it to utilise a touch based input.
+The framework utilises a number of third-party libraries to support a wide range of functions such as networking, touch gesture recognition and multimedia support.
+The technique was implemented as part of an application within the {\emph{SynergyNet}} framework which allowed for it to utilise a touch-based input.
 
 The arrows used in the implemented technique were designed to always originate from the centre of the interface.
 The tail of an arrow remained in the centre of the interface while the participant could drag the arrowhead to any location on display.
-The arrow being manipulated would therefore point from the centre of the interface towards the location of a participant's last relevant touch (relevant being defined as a touch within a certain distance of the arrowhead); this allowed participants to determine the direction and length of the arrow.
+The arrow being manipulated would therefore point from the centre of the interface towards the location of a participant's last relevant touch (``relevant'' being defined as a touch within a certain distance of the arrowhead); this allowed participants to determine the direction and length of the arrow.
 The participant could reposition an arrowhead as much as they wanted.
-Once a participant was finished establishing an arrow's direction they would then be expected to press a button on the interface to confirm their arrangement.
+Once a participant has finished establishing an arrow's direction they would then be expected to press a button on the interface to confirm their arrangement.
 
-The technique first asked participants to draw a single arrow.
-This arrow corresponds to {\emph{Arrow 1}} in Figure~\ref{fig:orienTrig} which is used to establish the interface's orientation.
+The technique first asked participants to draw a single arrow -- this corresponds to {\emph{Arrow 1}} in Figure~\ref{fig:orienTrig} -- which is used to establish the interface's orientation.
 Once the participant confirmed their arrangement of this arrow they would then be asked to position two arrows together; these are {\emph{Arrow 2}} and {\emph{Arrow 3}} as shown in Figure~\ref{fig:trig}.
 While each of the arrows for this stage of the technique is intended to point towards a landmark, the target for each arrow is not made explicit to the participant.
 As long as each of the two arrows points at a different landmark it does not matter to which landmark they point.
 The assumption is made in this implementation that all the interfaces are positioned in the space to the right of the line heading from landmark A to B.
 Therefore, the arrow with the smallest clockwise angle from the environment's y-axis is {\emph{Arrow 2}}.
 With this known, {\emph{Arrow 3}} is known through the process of elimination.
-When a participant was satisfied with the positioning of both these arrows they could then confirm their placement to complete the technique.
+When a participant is satisfied with the positioning of both these arrows they are then asked to confirm their placement to complete the approach.
 
 \subsection*{Study Design}\label{sec:design}
 
@@ -477,10 +465,10 @@ The orientations were chosen to include
 \end{inparaenum}
 
 Video recordings of the participants using the technique were made so that information regarding the timings and possible mistakes could be observed.
-The application in which the technique was implemented was designed to record the local angle of any of the arrows drawn by a participant.
+The application was designed to record the local angle of any of the arrows drawn by a participant.
 Any of the values used by the technique to calculate an interface's location were also recorded along with the resulting positional information.
 
-Before the study took place, direct measurements of the table's positions and orientations were made by the study organisers.
+Before the study took place, multiple direct measurements of the table's positions and orientations were made by the study organisers to confirm the true locations.
 Using these values and the technique's calculations the angle of the arrows which would produce perfectly accurate positional information could be derived.
 Comparing these optimal angles with the angles of user drawn arrows allowed for a participant's inaccuracy to be quantified.
 
@@ -490,7 +478,7 @@ Each tablet interface had a resolution of 1024 by 768 displayed on a 247mm by 18
 \noindent Two hypotheses were proposed prior to the study:\\
 
 \begin{itemize}
-\item[\textbf{Hypothesis 1:}] {\emph{The error of the technique's result is proportional to the error user drawn arrows.}}
+\item[\textbf{Hypothesis 1:}] {\emph{The error of the technique's result is proportional to the error of user drawn arrows.}}
 
 To support or disprove this hypothesis, the optimal angles of an interface were compared with the $\alpha$, $\beta$ and $\theta$ angles of the arrows drawn by the participants for each execution of the technique.
 The deviation of a participant's arrows from their optimal angles could then be compared to the difference between the corresponding interface's calculated and actual location information (i.e. position and orientation).
@@ -507,7 +495,7 @@ This allowed any influences regarding the positioning of the interfaces to be di
 \section*{Results}\label{sec:results}  
 
 13 participants took part in the study.
-Each participant performed the technique 4 times -- once on each interface -- resulting in 52 instances of the technique being executed.
+Each participant performed the technique four times -- once on each interface -- resulting in 52 instances of the technique being executed.
 All the participants were right-handed males who used computers daily and had at least some prior experience using the stylus interaction employed by the tablet interfaces.
 
 % fig:scatterAverage
@@ -515,7 +503,7 @@ All the participants were right-handed males who used computers daily and had at
 Figure~\ref{fig:scatterAverage} shows the average deviation of each participant's arrows from their optimal equivalents against the resulting positional information's average deviation from the actual location and orientation.
 {\emph{Arrow 1}} in the graph represents the arrow used to collect a device's orientation.
 {\emph{Arrow 2}} and {\emph{Arrow 3}} represent the arrows used to point towards the two landmarks.
-The graph in the figure indicates a general trend that as the average deviation from the optimum increases, the difference between an interface's actual and calculated positions increases.
+The graph in Figure~\ref{fig:scatterAverage} indicates a general trend that as the average deviation from the optimum increases, the difference between an interface's actual and calculated positions increases.
 This supports Hypothesis 1 as a proportional relationship between the participant's inaccuracy and the error of the technique's result is demonstrated by the graph.
 As noted on the graph there is a set of outlying data which does not conform to this trend; this is discussed in the \nameref{sec:discussion} section.
 
@@ -525,12 +513,12 @@ Figure~\ref{fig:boxPlot} shows the average deviation of participant drawn arrows
 If Hypothesis 2 was correct, the mean of participants' inaccuracies should decrease as the participants' experience with the technique increases.
 However, the graph shows there is no discernible improvement for any of the participant drawn arrows over the number of attempts made.
 This indicates that there was no learning effect and that experience with the technique does not improve a participant's accuracy.
-The evidence indicates that Hypothesis 2 is incorrect.
+The evidence thus indicates that Hypothesis 2 is incorrect.
 
 
 \section*{Discussion}\label{sec:discussion}
 
-As identified in the \nameref{sec:results} section, there is a subset of 8 results which do not conform to the general trend of the data.
+As identified in the \nameref{sec:results} section, there is a subset of eight results which do not conform to the general trend of the data.
 These outlying results are circled in Figure~\ref{fig:scatterAverage} outside the grouping of the majority of data.
 The data outside this subset of results implies that there is a proportional relationship between a user's accuracy and the error of the result.
 However, these outlying results represent instances where a participant has been relatively inaccurate in comparison to other executions of the technique but a position with little deviation from the interface's actual position has been calculated.
@@ -539,21 +527,21 @@ This implies that the relationship between a user's inaccuracies and the error o
 % fig:scatterIndividual
 
 It is possible that one of the arrows used by the technique as an input has a greater influence over the result than the others.
-The points in the graph shown in Figure~\ref{fig:scatterIndividual} represent deviation of individual participant drawn arrows from their corresponding optimums for all 52 instances of the technique being performed.
+The points in the graph shown in Figure~\ref{fig:scatterIndividual} represent deviation of individual participant-drawn arrows from their corresponding optimum angles for all 52 instances of the technique being performed.
 The graph highlights the general trend of participant's total inaccuracy increasing with the error of the result (ignoring the outliers previously discussed).
 If any particular arrow input into the technique has a greater influence than the others then a relationship between the inaccuracies of the arrow and the result would be apparent.
-For example, if {\emph{Arrow 1}} had a significantly greater influence than {\emph{Arrow 2}} and {\emph{Arrow 3}} then a correlation between the size of the participant inaccuracies when drawing this arrow and the magnitude of the error in the technique's result would be apparent.
+For example, if {\emph{Arrow 1}} had a significantly greater influence than {\emph{Arrow 2}} and {\emph{Arrow 3}}, then a correlation between the size of the participant inaccuracies when drawing this arrow and the magnitude of the error in the technique's result would be apparent.
 {\emph{Arrow 3}} does appear to produce a larger total deviation for smaller deviations in input than the other two arrows.
 This could be a result of this arrow having a smaller range of user input deviations as shown in Figure~\ref{fig:boxPlot}.
 Despite this, no clear relation between the inaccuracy for a single arrow and the error of the technique's result is apparent in these results.
 
 It is possible that a specific combination of arrows may have the greatest influence on the result, rather than a single arrow.
 If this were true it would mean that one of the arrows would have comparatively little influence on the technique's result.
-In circumstances where the participant inaccuracy for a hypothetical inconsequential arrow is large, but is small for the other two arrows, the total deviation from the arrow optimums would not be proportional to the result's error.
+In circumstances where the participant inaccuracy for a hypothetical inconsequential arrow is large, but is small for the other two arrows, the total deviation from the arrow's optimum angle would not be proportional to the result's error.
 This would account for the outlying data.
 However, the data from the study does not support this as no relationship between the inaccuracy of two arrows and the error of the technique's result is apparent.
 
-There is a further possibility that different individual arrows, or combination of arrows may have the greater influence in specific regions of the environment.
+There is a further possibility that different individual arrows, or combination of arrows, may have the greater influence in specific regions of the environment.
 This could be due to the interface's proximity to the landmarks.
 If an interface inhabits a region of the display where one of the landmarks used by the technique is significantly closer than the other, it is possible that the arrow pointing towards this landmark may hold a greater or lesser influence than in other regions of the environment.
 Further study is required to discover if this theory is correct.
@@ -570,9 +558,9 @@ Since Hypothesis 1 holds true, there is a proportional relationship between user
 A small deviation in the multiple results from a single interface would indicate that the user is being more accurate than a user producing a large deviation in their results.
 
 As a user repeats the technique on an interface the confidence rating increases.
-A greater confidence rating implies a higher probability of a more accurate calculated position.
+A greater confidence rating implies a higher probability of a more accurately calculated position.
 However, one of the main strengths of this technique is the short amount of time it requires in comparison to the alternative of measuring the position of an interface directly.
-Users were noted to take an average of 26.9 seconds per each performance of the technique in the study.
+Users were noted to take an average of 26.9 seconds per performance of the technique in the study.
 Repeating the technique increases the amount of time required to calculate the position on an interface.
 It is important to consider the trade-off between the accuracy gained from repeating the technique and the additional time required from users.
 Using knowledge of where in an environment users may be less accurate, the number of times the technique is repeated could be kept to a minimum allowing for the best trade-off between time taken and accuracy.
@@ -585,30 +573,28 @@ The technique offers a method of informing a system of the location and orientat
 This technique is obstruction tolerant, quick, inexpensive and not encumbering.
 However, the accuracy of the technique is dependant on the accuracy of users.
 
-The technique may be required to be made more accurate for use in some systems.
-The accuracy of participants in the study was determined not to improve with practice.
+As the accuracy of participants in the study was determined not to improve with practice, the technique may be required to be made more accurate for use in some systems.
 Therefore, attempts to improve the accuracy of users, and as a result reduce the error of the resulting calculated positions, cannot rely on users gaining experience with the technique.
 Future work involving this technique will require discovering what influences a user's accuracy.
 One such influence, discussed in the \nameref{sec:discussion} section, is the region of the environment relative to the landmarks which the display inhabits.
 Other potential influences could include the size of the interfaces in addition to the distance between the interface and the landmarks.
 
 A possible alteration to the technique which could result in greater accuracy is the use of more landmarks.
-By drawing additional lines to other landmarks in the environment (with known distances between each other) the technique's calculations could be repeated with each pair of landmarks.
+By drawing additional lines to other landmarks in the environment (with known distances between them) the technique's calculations could be repeated with each pair of landmarks.
 This could allow for deviation in the resulting calculated position to be reduced by finding the convergence between the results of each execution of the calculations.
 The more arrows the user draws to different landmarks the more the impact of their deviations could be minimised.
-In this study the authors focused on the use of two landmarks as this is the minimum needed for the technique to work.
+In this study the authors focused on the use of two landmarks as this is the minimum required for validation of this approach.
 This makes this iteration of the technique the fastest in comparison with variations where there are additional landmarks because the user will need to draw more arrows.
 However, if the use of extra landmarks greatly increases the accuracy this could be worth the additional time taken to draw more arrows.
 Future studies involving the technique could focus on finding how much additional landmarks increase accuracy.
-Once this is known further studies could then find the best trade-off in the additional time to draw more arrows with accuracy of the technique.
+Once this is known, it would be possible to find the best trade-off in the additional time to draw more arrows with accuracy of the technique.
 
-Future iterations of the study could also make other improvements on the technique's implementation.
-One feasible improvement could be to the method used for collecting the orientation of devices.
-The instructions to participants described the first arrow as pointing to the \emph{Room's North}, this caused confusion amongst some participants and often had to be re-explained by study organisers.
+Future iterations of the study could also make other improvements on the technique's implementation; one feasible improvement could be to the method used for collecting the orientation of devices.
+The instructions to participants described the first arrow as pointing to the \emph{Room's North}, this caused confusion amongst some participants and often had to be explained a number of times by study organisers.
 This highlighted how the difference between this first arrow pointing in a general direction (i.e. parallel to the line between the landmarks) and the subsequent two arrows pointing to specific locations (i.e. to the landmarks themselves) was difficult to convey to participants and may have increased the required cognitive load of the technique.
 This could have led to errors in what participants thought they needed to point at and their uncertainty may have had an impact on their accuracy.
 
-Future studies could collect the device orientation through different methods.
+It may also be possible for future studies to collect the device orientation through different approaches.
 One such method could be through the use of a rectangle on the screen which the user can rotate.
 User should be instructed to rotate the rectangle so that it aligns with the walls of the room.
 The rectangle will need to have one side highlighted that participants must align with a specific side of the room.
@@ -617,17 +603,17 @@ This method of collecting the device's orientation could differentiate the orien
 
 Another alternative method of collecting device orientation could be through the use of an in-built compass.
 If the devices being used in the study have in-built compasses then magnetic North could be used to derive the \emph{Room's North} and therefore the orientation of devices.
-For this to work the angle between the line from Landmark A to Landmark B and magnetic North would need to be known beforehand (much like how the technique needs to know the distance between the two landmarks beforehand).
+For this approach to work, the angle between the line from Landmark A to Landmark B and magnetic North would need to be known beforehand (much like how the technique needs to know the distance between the two landmarks beforehand).
 The devices could then apply this known difference to their reading of magnetic North to derive their orientation.
 The removes a step from the technique reducing the required user input further; only needing users to draw arrows to the two landmarks.
 This reduction in user interpretation and input removes some of the technique's reliance on user accuracy.
-Though the accuracy of in-built compasses can vary between devices, they are likely to return a more accurate result~\cite{Hwang2012} than that from the user input observed in this study.
-This change to the technique is likely to vastly improve it but is only applicable in scenarios where the devices used have in-built compasses.
+Although the accuracy of in-built compasses can vary between devices, they are likely to return a more accurate result~\cite{Hwang2012} than that from the user input observed in this study.
+This change to the technique is likely to vastly improve it, but would only be applicable in scenarios where the devices used have in-built compasses.
 The technique in its current form, as it is presented in this paper, allows for its use on any device which provides pointing or touch-based user input without needing any additional features.
 
 The findings of any future studies concerning this technique would allow for improvements to its accuracy.
 Knowledge of how accurate an execution of the technique is likely to be allows a confidence rating to be employed; this confidence rating could be used to judge whether the result is usable for a specific scenario.
-Through this confidence rating the best trade off could be discovered between the time the technique requires to be performed and the accuracy of the resulting calculated position.
+Through this confidence rating, the best trade off could be discovered between the time the technique requires to be performed and the accuracy of the resulting calculated position.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
